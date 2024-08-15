@@ -1,16 +1,27 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
+<div class="page">
+    <div class="sidebar @(_showNavMenu ? "" : "collapsed")">
+        <NavMenu ShowNavMenu="@_showNavMenu" />
+    </div>
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <button class="btn btn-primary " @onclick="ToggleNavMenu">
+                @(_showNavMenu ? "◀" : "▶")
+            </button>
         </div>
-
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+
+@code {
+    private bool _showNavMenu = true;
+
+    private void ToggleNavMenu()
+    {
+        _showNavMenu = !_showNavMenu;
+        StateHasChanged();
+    }
+}

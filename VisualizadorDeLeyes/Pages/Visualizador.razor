@@ -4,31 +4,32 @@
 @using System.IO;
 @using Markdig;
 @inject IJSRuntime JSRuntime
+@inject HttpClient HttpClient
 <style>
-   /* .resumen-articulo {
-        background-color: bisque;
-    }
+    /* .resumen-articulo {
+            background-color: bisque;
+        }
 
-    .resumen-seccion {
-        background-color: beige;
-    }
+        .resumen-seccion {
+            background-color: beige;
+        }
 
-    .resumen-capitulo {
-        background-color: lightblue;
-    }
+        .resumen-capitulo {
+            background-color: lightblue;
+        }
 
-    .resumen-titulo {
-        background-color: yellow;
-    }
+        .resumen-titulo {
+            background-color: yellow;
+        }
 
-    .resumen {
-        outline: 1px solid black;
-        display: block;
-        width: fit-content;
-        padding: 0.5em;
-        margin-bottom:1em;
-    }
-    */
+        .resumen {
+            outline: 1px solid black;
+            display: block;
+            width: fit-content;
+            padding: 0.5em;
+            margin-bottom:1em;
+        }
+        */
 
     body {
         font-family: Arial, sans-serif;
@@ -72,7 +73,7 @@
         padding: 1em;
         margin-bottom: 1.5em;
         border-radius: 4px;
-        display:block;
+        display: block;
         width: fit-content;
     }
 
@@ -87,15 +88,29 @@
 </style>
 <h1>Visor de Leyes</h1>
 
-<InputFile OnChange="@LoadFile" accept=".json" />
+<div>
+    <h3>Seleccionar ley preexistente:</h3>
+    <select @onchange="CargarLeyPreexistente">
+        <option value="">Seleccione una ley</option>
+        @foreach (var leyInfo in leyesPreexistentes)
+        {
+            <option value="@leyInfo.NombreArchivo">@leyInfo.Titulo</option>
+        }
+    </select>
+</div>
+
+<div>
+    <h3>O cargar una nueva ley:</h3>
+    <InputFile OnChange="@LoadFile" accept=".json" />
+</div>
 
 @if (ley == null)
 {
-    <p>Cargue un archivo JSON para visualizar la ley.</p>
+    <p>Seleccione una ley preexistente o cargue un archivo JSON para visualizar la ley.</p>
 }
 else
 {
-      <div class="contenido-ley">
+    <div class="contenido-ley">
     <h2>@ley.NombreLey</h2>
 
     @if (!string.IsNullOrEmpty(ley.ResumenLey))
@@ -348,8 +363,42 @@ else
 }
 
 @code {
+
     private Ley ley;
     private Dictionary<string, bool> visibilityState = new Dictionary<string, bool>();
+
+    private class LeyInfo
+    {
+        public string Titulo { get; set; }
+        public string NombreArchivo { get; set; }
+    }
+
+    private List<LeyInfo> leyesPreexistentes = new List<LeyInfo>
+    {
+        new LeyInfo { Titulo = "Constitución española", NombreArchivo = "Constitucion_espanola.json" },
+        new LeyInfo { Titulo = "Ley de Seguridad Ciudadana", NombreArchivo = "Ley2.json" },
+        new LeyInfo { Titulo = "Ley de Educación", NombreArchivo = "Ley3.json" }
+        // Añade aquí más leyes según sea necesario
+    };
+
+    private async Task CargarLeyPreexistente(ChangeEventArgs e)
+    {
+        var nombreArchivo = e.Value.ToString();
+        if (!string.IsNullOrEmpty(nombreArchivo))
+        {
+            try
+            {
+                var response = await HttpClient.GetStringAsync($"Leyes/{nombreArchivo}");
+                ley = JsonSerializer.Deserialize<Ley>(response);
+                InitializeVisibilityState();
+                StateHasChanged();
+            }
+            catch (Exception ex)
+            {
+                await JSRuntime.InvokeVoidAsync("alert", $"Error al cargar la ley preexistente: {ex.Message}");
+            }
+        }
+    }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
     {
@@ -369,6 +418,10 @@ else
             await JSRuntime.InvokeVoidAsync("alert", $"Error al cargar el archivo: {ex.Message}");
         }
     }
+
+
+
+    
 
     private void InitializeVisibilityState()
     {

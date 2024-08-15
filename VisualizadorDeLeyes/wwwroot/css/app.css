@@ -101,3 +101,51 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+    .sidebar.collapsed {
+        margin-left: -250px;
+    }
+
+main {
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar.collapsed + main {
+    margin-left: 0;
+}
+
+.sidebar-toggle {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+    .sidebar-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+@media (max-width: 640.98px) {
+    .sidebar {
+        position: fixed;
+        z-index: 1;
+    }
+
+        .sidebar.collapsed {
+            margin-left: -100%;
+        }
+
+    main {
+        margin-left: 0;
+    }
+}

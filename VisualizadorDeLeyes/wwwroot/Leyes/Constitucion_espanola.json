@@ -1,4 +1,5 @@
 {
+
   "NombreLey": "Constitución Española de 1978",
   "Preambulo": {
     "ResumenPreambulo": "Establece los principios fundamentales y el marco legal del Estado español.",
@@ -74,7 +75,7 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     },
     {
@@ -117,7 +118,7 @@
             }
           ],
           "Secciones": [
-            
+
           ]
         },
         {
@@ -418,7 +419,7 @@
               "TextoCompletoArticulo": "**Artículo 52**\nLa ley regulará las organizaciones profesionales que contribuyan a la defensa de los intereses económicos que les sean propios. Su estructura interna y funcionamiento deberán ser democráticos."
             }
           ]
-          
+
         },
         {
           "NombreCapitulo": "CAPÍTULO CUARTO. De las garantías de las libertades y derechos fundamentales",
@@ -452,7 +453,7 @@
               "TextoCompletoArticulo": "**Artículo 55**\n\n1. Los derechos reconocidos en los artículos 17, 18, apartados 2 y 3, artículos 19, 20, apartados 1, a) y d), y 5, artículos 21, 28, apartado 2, y artículo 37, apartado 2, podrán ser suspendidos cuando se acuerde la declaración del estado de excepción o de sitio en los términos previstos en la Constitución. Se exceptúa de lo establecido anteriormente el apartado 3 del artículo 17 para el supuesto de declaración de estado de excepción.\n\n2. Una ley orgánica podrá determinar la forma y los casos en los que, de forma individual y con la necesaria intervención judicial y el adecuado control parlamentario, los derechos reconocidos en los artículos 17, apartado 2, y 18, apartados 2 y 3, pueden ser suspendidos para personas determinadas, en relación con las investigaciones correspondientes a la actuación de bandas armadas o elementos terroristas.\n\nLa utilización injustificada o abusiva de las facultades reconocidas en dicha ley orgánica producirá responsabilidad penal, como violación de los derechos y libertades reconocidos por las leyes."
             }
           ]
-          
+
         }
       ]
     },
@@ -532,7 +533,7 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     },
     {
@@ -650,7 +651,7 @@
             }
           ],
           "Secciones": [
-            
+
           ]
         },
         {
@@ -862,10 +863,10 @@
         }
       ],
       "Capitulos": [
-        
+
       ],
       "Secciones": [
-        
+
       ]
     },
     {
@@ -937,7 +938,7 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     },
     {
@@ -1023,7 +1024,7 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     },
     {
@@ -1095,7 +1096,7 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     },
     {
@@ -1129,7 +1130,7 @@
             }
           ],
           "Secciones": [
-            
+
           ]
         },
         {
@@ -1159,7 +1160,7 @@
             }
           ],
           "Secciones": [
-            
+
           ]
         },
         {
@@ -1280,7 +1281,7 @@
             }
           ],
           "Secciones": [
-            
+
           ]
         }
       ]
@@ -1340,7 +1341,7 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     },
     {
@@ -1377,95 +1378,102 @@
         }
       ],
       "Capitulos": [
-        
+
       ]
     }
   ],
+
+
+
+
+
+
+
   "Disposiciones": {
-    "Disposiciones": {
-      "DisposicionesAdicionales": [
-        {
-          "NombreDisposicion": "Primera",
-          "ResumenDisposicion": "**Derechos históricos de territorios forales**: La Constitución ampara los derechos históricos de estos territorios. Su actualización se realizará dentro del marco constitucional y estatutario.",
-          "TextoCompletoDisposicion": "**Primera.**\nLa Constitución ampara y respeta los derechos históricos de los territorios forales.\n\nLa actualización general de dicho régimen foral se llevará a cabo, en su caso, en el marco de la Constitución y de los Estatutos de Autonomía."
-        },
-        {
-          "NombreDisposicion": "Segunda",
-          "ResumenDisposicion": "**Mayoría de edad y derechos forales**: La declaración de mayoría de edad a los 18 años no afecta a las situaciones amparadas por los derechos forales en el ámbito del Derecho privado.",
-          "TextoCompletoDisposicion": "**Segunda.**\nLa declaración de mayoría de edad contenida en el artículo 12 de esta Constitución no perjudica las situaciones amparadas por los derechos forales en el ámbito del Derecho privado."
-        },
-        {
-          "NombreDisposicion": "Tercera",
-          "ResumenDisposicion": "**Régimen económico y fiscal de Canarias**: Cualquier modificación requerirá un informe previo de la Comunidad Autónoma o del órgano provisional autonómico correspondiente.",
-          "TextoCompletoDisposicion": "**Tercera.**\nLa modificación del régimen económico y fiscal del archipiélago canario requerirá informe previo de la Comunidad Autónoma o, en su caso, del órgano provisional autonómico."
-        },
-        {
-          "NombreDisposicion": "Cuarta",
-          "ResumenDisposicion": "**Audiencias Territoriales**: En Comunidades Autónomas con más de una Audiencia Territorial, los Estatutos de Autonomía podrán mantenerlas, distribuyendo competencias entre ellas, siempre respetando la ley orgánica del poder judicial.",
-          "TextoCompletoDisposicion": "**Cuarta.**\nEn las Comunidades Autónomas donde tengan su sede más de una Audiencia Territorial, los Estatutos de Autonomía respectivos podrán mantener las existentes, distribuyendo las competencias entre ellas, siempre de conformidad con lo previsto en la ley orgánica del poder judicial y dentro de la unidad e independencia de éste."
-        }
-      ],
-      "DisposicionesTransitorias": [
-        {
-          "NombreDisposicion": "Primera",
-          "ResumenDisposicion": "**Iniciativa autonómica en territorios con régimen provisional**: Los órganos colegiados superiores en estos territorios pueden sustituir la iniciativa atribuida a las Diputaciones Provinciales o órganos interinsulares para iniciar el proceso autonómico.",
-          "TextoCompletoDisposicion": "**Primera.**\nEn los territorios dotados de un régimen provisional de autonomía, sus órganos colegiados superiores, mediante acuerdo adoptado por la mayoría absoluta de sus miembros, podrán sustituir la iniciativa que en el apartado 2 del artículo 143 atribuye a las Diputaciones Provinciales o a los órganos interinsulares correspondientes."
-        },
-        {
-          "NombreDisposicion": "Segunda",
-          "ResumenDisposicion": "**Proceso autonómico acelerado**: Territorios que aprobaron proyectos de Estatuto en el pasado y cuentan con regímenes provisionales pueden iniciar inmediatamente el proceso autonómico, siguiendo el procedimiento establecido en el artículo 151.",
-          "TextoCompletoDisposicion": "**Segunda.**\nLos territorios que en el pasado hubiesen plebiscitado afirmativamente proyectos de Estatuto de autonomía y cuenten, al tiempo de promulgarse esta Constitución, con regímenes provisionales de autonomía podrán proceder inmediatamente en la forma que se prevé en el apartado 2 del artículo 148, cuando así lo acordaren, por mayoría absoluta, sus órganos preautonómicos colegiados superiores, comunicándolo al Gobierno. El proyecto de Estatuto será elaborado de acuerdo con lo establecido en el artículo 151, número 2, a convocatoria del órgano colegiado preautonómico."
-        },
-        {
-          "NombreDisposicion": "Tercera",
-          "ResumenDisposicion": "**Iniciativa autonómica de Corporaciones locales**: Se pospone hasta las primeras elecciones locales tras la entrada en vigor de la Constitución.",
-          "TextoCompletoDisposicion": "**Tercera.**\nLa iniciativa del proceso autonómico por parte de las Corporaciones locales o de sus miembros, prevista en el apartado 2 del artículo 143, se entiende diferida, con todos sus efectos, hasta la celebración de las primeras elecciones locales una vez vigente la Constitución."
-        },
-        {
-          "NombreDisposicion": "Cuarta",
-          "ResumenDisposicion": "**Incorporación de Navarra al régimen autonómico vasco**: \n\n1. **Iniciativa**: Corresponde al Órgano Foral competente.\n2. **Aprobación**: Requiere mayoría de miembros del Órgano Foral y ratificación por referéndum.\n3. **Repetición de la iniciativa**: Solo en distinto período del mandato del Órgano Foral o tras el plazo mínimo del artículo 143.",
-          "TextoCompletoDisposicion": "**Cuarta.**\n1. En el caso de Navarra, y a efectos de su incorporación al Consejo General Vasco o al régimen autonómico vasco que le sustituya, en lugar de lo que establece el artículo 143 de la Constitución, la iniciativa corresponde al Órgano Foral competente, el cual adoptará su decisión por mayoría de los miembros que lo componen. Para la validez de dicha iniciativa será preciso, además, que la decisión del Órgano Foral competente sea ratificada por referéndum expresamente convocado al efecto, y aprobado por mayoría de los votos válidos emitidos.\n\n2. Si la iniciativa no prosperase, solamente se podrá reproducir la misma en distinto período del mandato del Órgano Foral competente, y en todo caso, cuando haya transcurrido el plazo mínimo que establece el artículo 143."
-        },
-        {
-          "NombreDisposicion": "Quinta",
-          "ResumenDisposicion": "**Ceuta y Melilla como Comunidades Autónomas**: Pueden constituirse si lo deciden sus Ayuntamientos por mayoría absoluta y lo autorizan las Cortes Generales mediante ley orgánica.",
-          "TextoCompletoDisposicion": "**Quinta.**\nLas ciudades de Ceuta y Melilla podrán constituirse en Comunidades Autónomas si así lo deciden sus respectivos Ayuntamientos, mediante acuerdo adoptado por la mayoría absoluta de sus miembros y así lo autorizan las Cortes Generales, mediante una ley orgánica, en los términos previstos en el artículo 144."
-        },
-        {
-          "NombreDisposicion": "Sexta",
-          "ResumenDisposicion": "**Dictamen de proyectos de Estatuto**: La Comisión Constitucional del Congreso los examinará por orden de entrada, iniciando el plazo de dos meses tras finalizar el estudio de cada proyecto.",
-          "TextoCompletoDisposicion": "**Sexta.**\nCuando se remitieran a la Comisión Constitucional del Congreso varios proyectos de Estatuto, se dictaminarán por el orden de entrada en aquélla, y el plazo de dos meses a que se refiere el artículo 151 empezará a contar desde que la Comisión termine el estudio del proyecto o proyectos de que sucesivamente haya conocido."
-        },
-        {
-          "NombreDisposicion": "Séptima",
-          "ResumenDisposicion": "**Disolución de organismos provisionales autonómicos**: Ocurrirá en tres casos:\n\n1. Al constituirse los órganos establecidos en los Estatutos de Autonomía.\n2. Si la iniciativa autonómica no prospera.\n3. Si no ejercen su derecho en tres años.",
-          "TextoCompletoDisposicion": "**Séptima.**\nLos organismos provisionales autonómicos se considerarán disueltos en los siguientes casos:\n\na) Una vez constituidos los órganos que establezcan los Estatutos de Autonomía aprobados conforme a esta Constitución.\n\nb) En el supuesto de que la iniciativa del proceso autonómico no llegara a prosperar por no cumplir los requisitos previstos en el artículo 143.\n\nc) Si el organismo no hubiera ejercido el derecho que le reconoce la disposición transitoria primera en el plazo de tres años."
-        },
-        {
-          "NombreDisposicion": "Octava",
-          "ResumenDisposicion": "**Transición de las Cámaras y Gobierno**: \n\n1. **Cámaras actuales**: Asumirán funciones del Congreso y Senado hasta el 15 de junio de 1981.\n2. **Aplicación del artículo 99**: Se inicia un período de 30 días tras la promulgación de la Constitución.\n3. **Elecciones**: En caso de disolución, se aplicarán normas previas con excepciones en inelegibilidades, incompatibilidades y edad de voto.",
-          "TextoCompletoDisposicion": "**Octava.**\n1. Las Cámaras que han aprobado la presente Constitución asumirán, tras la entrada en vigor de la misma, las funciones y competencias que en ella se señalan, respectivamente, para el Congreso y el Senado, sin que en ningún caso su mandato se extienda más allá del 15 de junio de 1981.\n\n2. A los efectos de lo establecido en el artículo 99, la promulgación de la Constitución se considerará como supuesto constitucional en el que procede su aplicación. A tal efecto, a partir de la citada promulgación se abrirá un período de treinta días para la aplicación de lo dispuesto en dicho artículo.\n\nDurante este período, el actual Presidente del Gobierno, que asumirá las funciones y competencias que para dicho cargo establece la Constitución, podrá optar por utilizar la facultad que le reconoce el artículo 115 o dar paso, mediante la dimisión, a la aplicación de lo establecido en el artículo 99, quedando en este último caso en la situación prevista en el apartado 2 del artículo 101.\n\n3. En caso de disolución, de acuerdo con lo previsto en el artículo 115, y si no se hubiera desarrollado legalmente lo previsto en los artículos 68 y 69, serán de aplicación en las elecciones las normas vigentes con anterioridad, con las solas excepciones de que en lo referente a inelegibilidades e incompatibilidades se aplicará directamente lo previsto en el inciso segundo de la letra b) del apartado 1 del artículo 70 de la Constitución, así como lo dispuesto en la misma respecto a la edad para el voto y lo establecido en el artículo 69,3."
-        },
-        {
-          "NombreDisposicion": "Novena",
-          "ResumenDisposicion": "**Renovación del Tribunal Constitucional**: \n\n1. **Primer sorteo**: A los tres años, para renovar cuatro miembros.\n2. **Segundo sorteo**: Tres años después, para los grupos no afectados anteriormente.\n3. **Futuras renovaciones**: Según el artículo 159.3.",
-          "TextoCompletoDisposicion": "**Novena.**\nA los tres años de la elección por vez primera de los miembros del Tribunal Constitucional se procederá por sorteo para la designación de un grupo de cuatro miembros de la misma procedencia electiva que haya de cesar y renovarse. A estos solos efectos se entenderán agrupados como miembros de la misma procedencia a los dos designados a propuesta del Gobierno y a los dos que proceden de la formulada por el Consejo General del Poder Judicial. Del mismo modo se procederá transcurridos otros tres años entre los dos grupos no afectados por el sorteo anterior. A partir de entonces se estará a lo establecido en el número 3 del artículo 159."
-        }
-      ],
-      "DiposicionesDerogatorias": [
-        {
-          "NombreDisposicion": "Disposición Derogatoria",
-          "ResumenDisposicion": "**Derogaciones**: \n\n1. **Leyes derogadas**: Ley para la Reforma Política, Principios del Movimiento Nacional, Fuero de los Españoles, del Trabajo, Ley Constitutiva de las Cortes, Ley de Sucesión en la Jefatura del Estado, Ley Orgánica del Estado, y Ley de Referéndum Nacional.\n\n2. **Derogación específica**: Ley de 25 de octubre de 1839 y Ley de 21 de julio de 1876 en lo que afecta a Álava, Guipúzcoa y Vizcaya.\n\n3. **Derogación general**: Todas las disposiciones que se opongan a la Constitución.",
-          "TextoCompletoDisposicion": "**DISPOSICION DEROGATORIA**\n1. Queda derogada la Ley 1/1977, de 4 de enero, para la Reforma Política, así como, en tanto en cuanto no estuvieran ya derogadas por la anteriormente mencionada Ley, la de Principios del Movimiento Nacional, de 17 de mayo de 1958; el Fuero de los Españoles, de 17 de julio de 1945; el del Trabajo, de 9 de marzo de 1938; la Ley Constitutiva de las Cortes, de 17 de julio de 1942; la Ley de Sucesión en la Jefatura del Estado, de 26 de julio de 1947, todas ellas modificadas por la Ley Orgánica del Estado, de 10 de enero de 1967, y en los mismos términos esta última y la de Referéndum Nacional de 22 de octubre de 1945.\n\n2. En tanto en cuanto pudiera conservar alguna vigencia, se considera definitivamente derogada la Ley de 25 de octubre de 1839 en lo que pudiera afectar a las provincias de Álava, Guipúzcoa y Vizcaya.\n\nEn los mismos términos se considera definitivamente derogada la Ley de 21 de julio de 1876.\n\n3. Asimismo quedan derogadas cuantas disposiciones se opongan a lo establecido en esta Constitución."
-        }
-      ],
-      "DisposicionesFinales": [
-        {
-          "NombreDisposicion": "Disposición Final",
-          "ResumenDisposicion": "**Entrada en vigor**: La Constitución entra en vigor el día de su publicación en el Boletín Oficial del Estado. También se publicará en las demás lenguas de España.",
-          "TextoCompletoDisposicion": "**DISPOSICION FINAL**\nEsta Constitución entrará en vigor el mismo día de la publicación de su texto oficial en el boletín oficial del Estado. Se publicará también en las demás lenguas de España."
-        }
-      ]
-    }
+    "DisposicionesAdicionales": [
+      {
+        "NombreDisposicion": "Primera",
+        "ResumenDisposicion": "**Derechos históricos de territorios forales**: La Constitución ampara los derechos históricos de estos territorios. Su actualización se realizará dentro del marco constitucional y estatutario.",
+        "TextoCompletoDisposicion": "**Primera.**\nLa Constitución ampara y respeta los derechos históricos de los territorios forales.\n\nLa actualización general de dicho régimen foral se llevará a cabo, en su caso, en el marco de la Constitución y de los Estatutos de Autonomía."
+      },
+      {
+        "NombreDisposicion": "Segunda",
+        "ResumenDisposicion": "**Mayoría de edad y derechos forales**: La declaración de mayoría de edad a los 18 años no afecta a las situaciones amparadas por los derechos forales en el ámbito del Derecho privado.",
+        "TextoCompletoDisposicion": "**Segunda.**\nLa declaración de mayoría de edad contenida en el artículo 12 de esta Constitución no perjudica las situaciones amparadas por los derechos forales en el ámbito del Derecho privado."
+      },
+      {
+        "NombreDisposicion": "Tercera",
+        "ResumenDisposicion": "**Régimen económico y fiscal de Canarias**: Cualquier modificación requerirá un informe previo de la Comunidad Autónoma o del órgano provisional autonómico correspondiente.",
+        "TextoCompletoDisposicion": "**Tercera.**\nLa modificación del régimen económico y fiscal del archipiélago canario requerirá informe previo de la Comunidad Autónoma o, en su caso, del órgano provisional autonómico."
+      },
+      {
+        "NombreDisposicion": "Cuarta",
+        "ResumenDisposicion": "**Audiencias Territoriales**: En Comunidades Autónomas con más de una Audiencia Territorial, los Estatutos de Autonomía podrán mantenerlas, distribuyendo competencias entre ellas, siempre respetando la ley orgánica del poder judicial.",
+        "TextoCompletoDisposicion": "**Cuarta.**\nEn las Comunidades Autónomas donde tengan su sede más de una Audiencia Territorial, los Estatutos de Autonomía respectivos podrán mantener las existentes, distribuyendo las competencias entre ellas, siempre de conformidad con lo previsto en la ley orgánica del poder judicial y dentro de la unidad e independencia de éste."
+      }
+    ],
+    "DisposicionesTransitorias": [
+      {
+        "NombreDisposicion": "Primera",
+        "ResumenDisposicion": "**Iniciativa autonómica en territorios con régimen provisional**: Los órganos colegiados superiores en estos territorios pueden sustituir la iniciativa atribuida a las Diputaciones Provinciales o órganos interinsulares para iniciar el proceso autonómico.",
+        "TextoCompletoDisposicion": "**Primera.**\nEn los territorios dotados de un régimen provisional de autonomía, sus órganos colegiados superiores, mediante acuerdo adoptado por la mayoría absoluta de sus miembros, podrán sustituir la iniciativa que en el apartado 2 del artículo 143 atribuye a las Diputaciones Provinciales o a los órganos interinsulares correspondientes."
+      },
+      {
+        "NombreDisposicion": "Segunda",
+        "ResumenDisposicion": "**Proceso autonómico acelerado**: Territorios que aprobaron proyectos de Estatuto en el pasado y cuentan con regímenes provisionales pueden iniciar inmediatamente el proceso autonómico, siguiendo el procedimiento establecido en el artículo 151.",
+        "TextoCompletoDisposicion": "**Segunda.**\nLos territorios que en el pasado hubiesen plebiscitado afirmativamente proyectos de Estatuto de autonomía y cuenten, al tiempo de promulgarse esta Constitución, con regímenes provisionales de autonomía podrán proceder inmediatamente en la forma que se prevé en el apartado 2 del artículo 148, cuando así lo acordaren, por mayoría absoluta, sus órganos preautonómicos colegiados superiores, comunicándolo al Gobierno. El proyecto de Estatuto será elaborado de acuerdo con lo establecido en el artículo 151, número 2, a convocatoria del órgano colegiado preautonómico."
+      },
+      {
+        "NombreDisposicion": "Tercera",
+        "ResumenDisposicion": "**Iniciativa autonómica de Corporaciones locales**: Se pospone hasta las primeras elecciones locales tras la entrada en vigor de la Constitución.",
+        "TextoCompletoDisposicion": "**Tercera.**\nLa iniciativa del proceso autonómico por parte de las Corporaciones locales o de sus miembros, prevista en el apartado 2 del artículo 143, se entiende diferida, con todos sus efectos, hasta la celebración de las primeras elecciones locales una vez vigente la Constitución."
+      },
+      {
+        "NombreDisposicion": "Cuarta",
+        "ResumenDisposicion": "**Incorporación de Navarra al régimen autonómico vasco**: \n\n1. **Iniciativa**: Corresponde al Órgano Foral competente.\n2. **Aprobación**: Requiere mayoría de miembros del Órgano Foral y ratificación por referéndum.\n3. **Repetición de la iniciativa**: Solo en distinto período del mandato del Órgano Foral o tras el plazo mínimo del artículo 143.",
+        "TextoCompletoDisposicion": "**Cuarta.**\n1. En el caso de Navarra, y a efectos de su incorporación al Consejo General Vasco o al régimen autonómico vasco que le sustituya, en lugar de lo que establece el artículo 143 de la Constitución, la iniciativa corresponde al Órgano Foral competente, el cual adoptará su decisión por mayoría de los miembros que lo componen. Para la validez de dicha iniciativa será preciso, además, que la decisión del Órgano Foral competente sea ratificada por referéndum expresamente convocado al efecto, y aprobado por mayoría de los votos válidos emitidos.\n\n2. Si la iniciativa no prosperase, solamente se podrá reproducir la misma en distinto período del mandato del Órgano Foral competente, y en todo caso, cuando haya transcurrido el plazo mínimo que establece el artículo 143."
+      },
+      {
+        "NombreDisposicion": "Quinta",
+        "ResumenDisposicion": "**Ceuta y Melilla como Comunidades Autónomas**: Pueden constituirse si lo deciden sus Ayuntamientos por mayoría absoluta y lo autorizan las Cortes Generales mediante ley orgánica.",
+        "TextoCompletoDisposicion": "**Quinta.**\nLas ciudades de Ceuta y Melilla podrán constituirse en Comunidades Autónomas si así lo deciden sus respectivos Ayuntamientos, mediante acuerdo adoptado por la mayoría absoluta de sus miembros y así lo autorizan las Cortes Generales, mediante una ley orgánica, en los términos previstos en el artículo 144."
+      },
+      {
+        "NombreDisposicion": "Sexta",
+        "ResumenDisposicion": "**Dictamen de proyectos de Estatuto**: La Comisión Constitucional del Congreso los examinará por orden de entrada, iniciando el plazo de dos meses tras finalizar el estudio de cada proyecto.",
+        "TextoCompletoDisposicion": "**Sexta.**\nCuando se remitieran a la Comisión Constitucional del Congreso varios proyectos de Estatuto, se dictaminarán por el orden de entrada en aquélla, y el plazo de dos meses a que se refiere el artículo 151 empezará a contar desde que la Comisión termine el estudio del proyecto o proyectos de que sucesivamente haya conocido."
+      },
+      {
+        "NombreDisposicion": "Séptima",
+        "ResumenDisposicion": "**Disolución de organismos provisionales autonómicos**: Ocurrirá en tres casos:\n\n1. Al constituirse los órganos establecidos en los Estatutos de Autonomía.\n2. Si la iniciativa autonómica no prospera.\n3. Si no ejercen su derecho en tres años.",
+        "TextoCompletoDisposicion": "**Séptima.**\nLos organismos provisionales autonómicos se considerarán disueltos en los siguientes casos:\n\na) Una vez constituidos los órganos que establezcan los Estatutos de Autonomía aprobados conforme a esta Constitución.\n\nb) En el supuesto de que la iniciativa del proceso autonómico no llegara a prosperar por no cumplir los requisitos previstos en el artículo 143.\n\nc) Si el organismo no hubiera ejercido el derecho que le reconoce la disposición transitoria primera en el plazo de tres años."
+      },
+      {
+        "NombreDisposicion": "Octava",
+        "ResumenDisposicion": "**Transición de las Cámaras y Gobierno**: \n\n1. **Cámaras actuales**: Asumirán funciones del Congreso y Senado hasta el 15 de junio de 1981.\n2. **Aplicación del artículo 99**: Se inicia un período de 30 días tras la promulgación de la Constitución.\n3. **Elecciones**: En caso de disolución, se aplicarán normas previas con excepciones en inelegibilidades, incompatibilidades y edad de voto.",
+        "TextoCompletoDisposicion": "**Octava.**\n1. Las Cámaras que han aprobado la presente Constitución asumirán, tras la entrada en vigor de la misma, las funciones y competencias que en ella se señalan, respectivamente, para el Congreso y el Senado, sin que en ningún caso su mandato se extienda más allá del 15 de junio de 1981.\n\n2. A los efectos de lo establecido en el artículo 99, la promulgación de la Constitución se considerará como supuesto constitucional en el que procede su aplicación. A tal efecto, a partir de la citada promulgación se abrirá un período de treinta días para la aplicación de lo dispuesto en dicho artículo.\n\nDurante este período, el actual Presidente del Gobierno, que asumirá las funciones y competencias que para dicho cargo establece la Constitución, podrá optar por utilizar la facultad que le reconoce el artículo 115 o dar paso, mediante la dimisión, a la aplicación de lo establecido en el artículo 99, quedando en este último caso en la situación prevista en el apartado 2 del artículo 101.\n\n3. En caso de disolución, de acuerdo con lo previsto en el artículo 115, y si no se hubiera desarrollado legalmente lo previsto en los artículos 68 y 69, serán de aplicación en las elecciones las normas vigentes con anterioridad, con las solas excepciones de que en lo referente a inelegibilidades e incompatibilidades se aplicará directamente lo previsto en el inciso segundo de la letra b) del apartado 1 del artículo 70 de la Constitución, así como lo dispuesto en la misma respecto a la edad para el voto y lo establecido en el artículo 69,3."
+      },
+      {
+        "NombreDisposicion": "Novena",
+        "ResumenDisposicion": "**Renovación del Tribunal Constitucional**: \n\n1. **Primer sorteo**: A los tres años, para renovar cuatro miembros.\n2. **Segundo sorteo**: Tres años después, para los grupos no afectados anteriormente.\n3. **Futuras renovaciones**: Según el artículo 159.3.",
+        "TextoCompletoDisposicion": "**Novena.**\nA los tres años de la elección por vez primera de los miembros del Tribunal Constitucional se procederá por sorteo para la designación de un grupo de cuatro miembros de la misma procedencia electiva que haya de cesar y renovarse. A estos solos efectos se entenderán agrupados como miembros de la misma procedencia a los dos designados a propuesta del Gobierno y a los dos que proceden de la formulada por el Consejo General del Poder Judicial. Del mismo modo se procederá transcurridos otros tres años entre los dos grupos no afectados por el sorteo anterior. A partir de entonces se estará a lo establecido en el número 3 del artículo 159."
+      }
+    ],
+    "DisposicionesDerogatorias": [
+      {
+        "NombreDisposicion": "Disposición Derogatoria",
+        "ResumenDisposicion": "**Derogaciones**: \n\n1. **Leyes derogadas**: Ley para la Reforma Política, Principios del Movimiento Nacional, Fuero de los Españoles, del Trabajo, Ley Constitutiva de las Cortes, Ley de Sucesión en la Jefatura del Estado, Ley Orgánica del Estado, y Ley de Referéndum Nacional.\n\n2. **Derogación específica**: Ley de 25 de octubre de 1839 y Ley de 21 de julio de 1876 en lo que afecta a Álava, Guipúzcoa y Vizcaya.\n\n3. **Derogación general**: Todas las disposiciones que se opongan a la Constitución.",
+        "TextoCompletoDisposicion": "**DISPOSICION DEROGATORIA**\n1. Queda derogada la Ley 1/1977, de 4 de enero, para la Reforma Política, así como, en tanto en cuanto no estuvieran ya derogadas por la anteriormente mencionada Ley, la de Principios del Movimiento Nacional, de 17 de mayo de 1958; el Fuero de los Españoles, de 17 de julio de 1945; el del Trabajo, de 9 de marzo de 1938; la Ley Constitutiva de las Cortes, de 17 de julio de 1942; la Ley de Sucesión en la Jefatura del Estado, de 26 de julio de 1947, todas ellas modificadas por la Ley Orgánica del Estado, de 10 de enero de 1967, y en los mismos términos esta última y la de Referéndum Nacional de 22 de octubre de 1945.\n\n2. En tanto en cuanto pudiera conservar alguna vigencia, se considera definitivamente derogada la Ley de 25 de octubre de 1839 en lo que pudiera afectar a las provincias de Álava, Guipúzcoa y Vizcaya.\n\nEn los mismos términos se considera definitivamente derogada la Ley de 21 de julio de 1876.\n\n3. Asimismo quedan derogadas cuantas disposiciones se opongan a lo establecido en esta Constitución."
+      }
+    ],
+    "DisposicionesFinales": [
+      {
+        "NombreDisposicion": "Disposición Final",
+        "ResumenDisposicion": "**Entrada en vigor**: La Constitución entra en vigor el día de su publicación en el Boletín Oficial del Estado. También se publicará en las demás lenguas de España.",
+        "TextoCompletoDisposicion": "**DISPOSICION FINAL**\nEsta Constitución entrará en vigor el mismo día de la publicación de su texto oficial en el boletín oficial del Estado. Se publicará también en las demás lenguas de España."
+      }
+    ]
   }
+
+
 }

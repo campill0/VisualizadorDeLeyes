@@ -1,0 +1,30 @@
+﻿{
+  "NombreLey": "Ley de Ejemplo",
+  "Preambulo": null,
+  "Titulos": [
+
+  ],
+  "Disposiciones": {
+    "DisposicionesAdicionales": [
+      {
+        "NombreDisposicion": "Primera",
+        "ResumenDisposicion": "Resumen de la primera disposici\u00F3n adicional",
+        "TextoCompletoDisposicion": "Texto completo de la primera disposici\u00F3n adicional"
+      }
+    ],
+    "DisposicionesTransitorias": [
+      {
+        "NombreDisposicion": "Primera Transitoria",
+        "ResumenDisposicion": "Resumen de la primera disposici\u00F3n transitoria",
+        "TextoCompletoDisposicion": "Texto completo de la primera disposici\u00F3n transitoria"
+      }
+    ],
+    "DisposicionesDerogatorias": [
+
+    ],
+    "DisposicionesFinales": [
+
+    ]
+  },
+  "ResumenLey": null
+}

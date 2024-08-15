@@ -1,0 +1,452 @@
+﻿@page "/visualizador"
+@using System.Text.Json;
+@using VisualizadorDeLeyes.Entidades
+@using System.IO;
+@using Markdig;
+@inject IJSRuntime JSRuntime
+<style>
+   /* .resumen-articulo {
+        background-color: bisque;
+    }
+
+    .resumen-seccion {
+        background-color: beige;
+    }
+
+    .resumen-capitulo {
+        background-color: lightblue;
+    }
+
+    .resumen-titulo {
+        background-color: yellow;
+    }
+
+    .resumen {
+        outline: 1px solid black;
+        display: block;
+        width: fit-content;
+        padding: 0.5em;
+        margin-bottom:1em;
+    }
+    */
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .contenido-ley {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .resumen-titulo, .resumen-seccion, .resumen-capitulo {
+        outline: 2px solid #4a90e2;
+        background-color: #e6f2ff;
+        display: block;
+        width: fit-content;
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border-radius: 4px;
+    }
+
+    .resumen-articulo {
+        outline: 2px solid #6b8e23;
+        background-color: #f0fff0;
+        display: block;
+        width: fit-content;
+        padding: 0.5em;
+        margin-bottom: 1em;
+        border-radius: 4px;
+    }
+
+    .texto-articulo {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        padding: 1em;
+        margin-bottom: 1.5em;
+        border-radius: 4px;
+        display:block;
+        width: fit-content;
+    }
+
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+
+    h6 {
+        color: #d35400;
+        margin-bottom: 0.5em;
+    }
+</style>
+<h1>Visor de Leyes</h1>
+
+<InputFile OnChange="@LoadFile" accept=".json" />
+
+@if (ley == null)
+{
+    <p>Cargue un archivo JSON para visualizar la ley.</p>
+}
+else
+{
+      <div class="contenido-ley">
+    <h2>@ley.NombreLey</h2>
+
+    @if (!string.IsNullOrEmpty(ley.ResumenLey))
+    {
+        <h3>Resumen de la Ley</h3>
+        @((MarkupString)RenderMarkdown(ley.ResumenLey))
+    }
+
+    @if (ley.Preambulo != null)
+    {
+        <h3>Preámbulo</h3>
+        @((MarkupString)RenderMarkdown(ley.Preambulo.ResumenPreambulo))
+    }
+
+    @foreach (var titulo in ley.Titulos)
+    {
+        <div class="titulo">
+            <h3>
+                <button @onclick="@(() => ToggleVisibility($"titulo-{titulo.NombreTitulo}"))">
+                    @(IsVisible($"titulo-{titulo.NombreTitulo}") ? "▼" : "►")
+                </button>
+                @titulo.NombreTitulo
+            </h3>
+            @if (IsVisible($"titulo-{titulo.NombreTitulo}"))
+            {
+                @if (!string.IsNullOrEmpty(titulo.ResumenTitulo))
+                {
+                    <span class="resumen resumen-titulo">
+                    @((MarkupString)RenderMarkdown(titulo.ResumenTitulo))
+                    </span>
+                }
+                @foreach (var articulo in titulo.Articulos)
+                {
+                    <div class="articulo">
+                        <h6>
+                            <button @onclick="@(() => ToggleVisibility($"articulo-{articulo.NumeroArticulo}"))">
+                                @(IsVisible($"articulo-{articulo.NumeroArticulo}") ? "▼" : "►")
+                            </button>
+                            Artículo @articulo.NumeroArticulo: @articulo.NombreArticulo
+                        </h6>
+                        @if (IsVisible($"articulo-{articulo.NumeroArticulo}"))
+                        {
+                            @if (!string.IsNullOrEmpty(articulo.ResumenArticulo))
+                            {
+                                <span class="resumen resumen-articulo">
+                                    @((MarkupString)RenderMarkdown(articulo.ResumenArticulo))
+                                </span>
+                            }
+                            <details>
+                                <summary>Ver texto completo</summary>
+                                <span class="texto-articulo">
+
+                                
+                                @((MarkupString)RenderMarkdown(articulo.TextoCompletoArticulo))
+                                    </span>
+                            </details>
+                        }
+                    </div>
+                }
+                @foreach (var capitulo in titulo.Capitulos)
+                {
+                    <div class="capitulo">
+                        <h4>
+                            <button @onclick="@(() => ToggleVisibility($"capitulo-{capitulo.NombreCapitulo}"))">
+                                @(IsVisible($"capitulo-{capitulo.NombreCapitulo}") ? "▼" : "►")
+                            </button>
+                            @capitulo.NombreCapitulo
+                        </h4>
+                        @if (IsVisible($"capitulo-{capitulo.NombreCapitulo}"))
+                        {
+                            @if (!string.IsNullOrEmpty(capitulo.ResumenCapitulo))
+                            {
+                                <span class="resumen resumen-capitulo">
+                                @((MarkupString)RenderMarkdown(capitulo.ResumenCapitulo))
+                                </span>
+                            }
+                            @foreach (var articulo in capitulo.Articulos)
+                            {
+                                <div class="articulo">
+                                    <h6>
+                                        <button @onclick="@(() => ToggleVisibility($"articulo-{articulo.NumeroArticulo}"))">
+                                            @(IsVisible($"articulo-{articulo.NumeroArticulo}") ? "▼" : "►")
+                                        </button>
+                                        Artículo @articulo.NumeroArticulo: @articulo.NombreArticulo
+                                    </h6>
+                                    @if (IsVisible($"articulo-{articulo.NumeroArticulo}"))
+                                    {
+                                        @if (!string.IsNullOrEmpty(articulo.ResumenArticulo))
+                                        {
+                                             <span class="resumen resumen-articulo">
+                                            @((MarkupString)RenderMarkdown(articulo.ResumenArticulo))
+                                            </span>
+                                        }
+                                        <details>
+                                            <summary>Ver texto completo</summary>
+                                              <span class="texto-articulo">
+                                            @((MarkupString)RenderMarkdown(articulo.TextoCompletoArticulo))
+                                            </span>
+                                        </details>
+                                    }
+                                </div>
+                            }
+                            @foreach (var seccion in capitulo.Secciones)
+                            {
+                                <div class="seccion">
+                                    <h5>
+                                        <button @onclick="@(() => ToggleVisibility($"seccion-{seccion.NombreSeccion}"))">
+                                            @(IsVisible($"seccion-{seccion.NombreSeccion}") ? "▼" : "►")
+                                        </button>
+                                        @seccion.NombreSeccion
+                                    </h5>
+                                    @if (IsVisible($"seccion-{seccion.NombreSeccion}"))
+                                    {
+                                        @if (!string.IsNullOrEmpty(seccion.ResumenSeccion))
+                                        {
+                                             <span class="resumen resumen-seccion">
+                                            @((MarkupString)RenderMarkdown(seccion.ResumenSeccion))
+                                            </span>
+                                        }
+
+                                        @foreach (var articulo in seccion.Articulos)
+                                        {
+                                            <div class="articulo">
+                                                <h6>
+                                                    <button @onclick="@(() => ToggleVisibility($"articulo-{articulo.NumeroArticulo}"))">
+                                                        @(IsVisible($"articulo-{articulo.NumeroArticulo}") ? "▼" : "►")
+                                                    </button>
+                                                    Artículo @articulo.NumeroArticulo: @articulo.NombreArticulo
+                                                </h6>
+                                                @if (IsVisible($"articulo-{articulo.NumeroArticulo}"))
+                                                {
+                                                    @if (!string.IsNullOrEmpty(articulo.ResumenArticulo))
+                                                    {
+                                                         <span class="resumen resumen-articulo">
+                                                        @((MarkupString)RenderMarkdown(articulo.ResumenArticulo))
+                                                        </span>
+                                                    }
+                                                    <details>
+                                                        <summary>Ver texto completo</summary>
+                                                          <span class="texto-articulo">
+                                                        @((MarkupString)RenderMarkdown(articulo.TextoCompletoArticulo))
+                                                        </span>
+                                                    </details>
+                                                }
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            }
+
+                            
+                        }
+                    </div>
+                }
+
+               
+            }
+        </div>
+    }
+
+    @if (ley.Disposiciones != null)
+    {
+        <h3>
+            <button @onclick="@(() => ToggleVisibility("disposiciones"))">
+                @(IsVisible("disposiciones") ? "▼" : "►")
+            </button>
+            Disposiciones
+        </h3>
+
+        @if (IsVisible("disposiciones"))
+        {
+            @if (ley.Disposiciones.DisposicionesAdicionales.Any())
+            {
+                <h4>Disposiciones Adicionales</h4>
+                @foreach (var disposicion in ley.Disposiciones.DisposicionesAdicionales)
+                {
+                    <div class="disposicion">
+                        <h5>@disposicion.NombreDisposicion</h5>
+                        @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                        {
+                            @((MarkupString)RenderMarkdown(disposicion.ResumenDisposicion))
+                        }
+                        <details>
+                            <summary>Ver texto completo</summary>
+                            @((MarkupString)RenderMarkdown(disposicion.TextoCompletoDisposicion))
+                        </details>
+                    </div>
+                }
+            }
+
+            @if (ley.Disposiciones.DisposicionesTransitorias.Any())
+            {
+                <h4>Disposiciones Transitorias</h4>
+                @foreach (var disposicion in ley.Disposiciones.DisposicionesTransitorias)
+                {
+                    <div class="disposicion">
+                        <h5>@disposicion.NombreDisposicion</h5>
+                        @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                        {
+                            @((MarkupString)RenderMarkdown(disposicion.ResumenDisposicion))
+                        }
+                        <details>
+                            <summary>Ver texto completo</summary>
+                            @((MarkupString)RenderMarkdown(disposicion.TextoCompletoDisposicion))
+                        </details>
+                    </div>
+                }
+            }
+
+            @if (ley.Disposiciones.DisposicionesDerogatorias.Any())
+            {
+                <h4>Disposiciones Derogatorias</h4>
+                @foreach (var disposicion in ley.Disposiciones.DisposicionesDerogatorias)
+                {
+                    <div class="disposicion">
+                        <h5>@disposicion.NombreDisposicion</h5>
+                        @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                        {
+                            @((MarkupString)RenderMarkdown(disposicion.ResumenDisposicion))
+                        }
+                        <details>
+                            <summary>Ver texto completo</summary>
+                            @((MarkupString)RenderMarkdown(disposicion.TextoCompletoDisposicion))
+                        </details>
+                    </div>
+                }
+            }
+
+            @if (ley.Disposiciones.DisposicionesFinales.Any())
+            {
+                <h4>Disposiciones Finales</h4>
+                @foreach (var disposicion in ley.Disposiciones.DisposicionesFinales)
+                {
+                    <div class="disposicion">
+                        <h5>@disposicion.NombreDisposicion</h5>
+                        @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                        {
+                            @((MarkupString)RenderMarkdown(disposicion.ResumenDisposicion))
+                        }
+                        <details>
+                            <summary>Ver texto completo</summary>
+                            @((MarkupString)RenderMarkdown(disposicion.TextoCompletoDisposicion))
+                        </details>
+                    </div>
+                }
+            }
+        }
+    }
+   </div>
+}
+
+@code {
+    private Ley ley;
+    private Dictionary<string, bool> visibilityState = new Dictionary<string, bool>();
+
+    private async Task LoadFile(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            var file = e.File;
+            var buffer = new byte[file.Size];
+            await file.OpenReadStream().ReadAsync(buffer);
+            var jsonContent = System.Text.Encoding.UTF8.GetString(buffer);
+
+            ley = JsonSerializer.Deserialize<Ley>(jsonContent);
+            InitializeVisibilityState();
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Error al cargar el archivo: {ex.Message}");
+        }
+    }
+
+    private void InitializeVisibilityState()
+    {
+        visibilityState.Clear();
+        foreach (var titulo in ley.Titulos)
+        {
+            visibilityState[$"titulo-{titulo.NombreTitulo}"] = false;
+            foreach (var capitulo in titulo.Capitulos)
+            {
+                visibilityState[$"capitulo-{capitulo.NombreCapitulo}"] = false;
+                foreach (var seccion in capitulo.Secciones)
+                {
+                    visibilityState[$"seccion-{seccion.NombreSeccion}"] = false;
+                    foreach (var articulo in seccion.Articulos)
+                    {
+                        visibilityState[$"articulo-{articulo.NumeroArticulo}"] = false;
+                    }
+                }
+                foreach (var articulo in capitulo.Articulos)
+                {
+                    visibilityState[$"articulo-{articulo.NumeroArticulo}"] = false;
+                }
+            }
+            foreach (var articulo in titulo.Articulos)
+            {
+                visibilityState[$"articulo-{articulo.NumeroArticulo}"] = false;
+            }
+        }
+        visibilityState["disposiciones"] = false;
+    }
+
+    private void ToggleVisibility(string key)
+    {
+        if (visibilityState.ContainsKey(key))
+        {
+            visibilityState[key] = !visibilityState[key];
+        }
+        else
+        {
+            visibilityState[key] = true;
+        }
+    }
+
+    private bool IsVisible(string key)
+    {
+        return visibilityState.ContainsKey(key) && visibilityState[key];
+    }
+
+    private string RenderMarkdown(string markdown)
+    {
+        if (string.IsNullOrEmpty(markdown))
+            return string.Empty;
+
+        markdown = markdown.Replace("\\n", "\n");
+
+        var pipeline = new MarkdownPipelineBuilder()
+            .UseAdvancedExtensions()
+            .UseSoftlineBreakAsHardlineBreak()
+            .Build();
+
+        return Markdown.ToHtml(markdown, pipeline);
+    }
+}
+
+<style>
+    .titulo, .capitulo, .seccion, .articulo, .disposicion {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    details {
+        margin-left: 20px;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+    }
+</style>

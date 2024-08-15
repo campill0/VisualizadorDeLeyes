@@ -278,93 +278,125 @@ else
             {
                 @if (ley.Disposiciones.DisposicionesAdicionales.Any())
                 {
-                    <h4>Disposiciones Adicionales</h4>
-                    @foreach (var disposicion in ley.Disposiciones.DisposicionesAdicionales.Where(d => ContainsSearchTerm(d)))
+                    <h4>
+                        <button @onclick="@(() => ToggleVisibility("disposicionesAdicionales"))">
+                            @(IsVisible("disposicionesAdicionales") ? "▼" : "►")
+                        </button>
+                        Disposiciones Adicionales
+                    </h4>
+                    @if (IsVisible("disposicionesAdicionales"))
                     {
-                        <div class="disposicion">
-                            <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
-                            @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
-                            {
-                                 <span class="resumen resumen-disposicion">
-                                @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
-                                </span>
-                            }
-                            <details>
-                                <summary>Ver texto completo</summary>
-                                 <span class="resumen texto-disposicion">
-                                @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
-                                </span>
-                            </details>
-                        </div>
+                        @foreach (var disposicion in ley.Disposiciones.DisposicionesAdicionales.Where(d => ContainsSearchTerm(d)))
+                        {
+                            <div class="disposicion">
+                                <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
+                                @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                                {
+                                    <span class="resumen resumen-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
+                                    </span>
+                                }
+                                <details>
+                                    <summary>Ver texto completo</summary>
+                                    <span class="resumen texto-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
+                                    </span>
+                                </details>
+                            </div>
+                        }
                     }
                 }
 
                 @if (ley.Disposiciones.DisposicionesTransitorias.Any())
                 {
-                    <h4>Disposiciones Transitorias</h4>
-                    @foreach (var disposicion in ley.Disposiciones.DisposicionesTransitorias.Where(d => ContainsSearchTerm(d)))
+                    <h4>
+                        <button @onclick="@(() => ToggleVisibility("disposicionesTransitorias"))">
+                            @(IsVisible("disposicionesTransitorias") ? "▼" : "►")
+                        </button>
+                        Disposiciones Transitorias
+                    </h4>
+                    @if (IsVisible("disposicionesTransitorias"))
                     {
-                        <div class="disposicion">
-                            <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
-                            @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
-                            {
-                                <span class="resumen resumen-disposicion">
-                                    @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
-                                </span>
-                            }
-                            <details>
-                                <summary>Ver texto completo</summary>
-                                <span class="resumen texto-disposicion">
-                                    @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
-                                </span>
-                            </details>
-                        </div>
+                        @foreach (var disposicion in ley.Disposiciones.DisposicionesTransitorias.Where(d => ContainsSearchTerm(d)))
+                        {
+                            <div class="disposicion">
+                                <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
+                                @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                                {
+                                    <span class="resumen resumen-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
+                                    </span>
+                                }
+                                <details>
+                                    <summary>Ver texto completo</summary>
+                                    <span class="resumen texto-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
+                                    </span>
+                                </details>
+                            </div>
+                        }
                     }
                 }
 
                 @if (ley.Disposiciones.DisposicionesDerogatorias.Any())
                 {
-                    <h4>Disposiciones Derogatorias</h4>
-                    @foreach (var disposicion in ley.Disposiciones.DisposicionesDerogatorias.Where(d => ContainsSearchTerm(d)))
+                    <h4>
+                        <button @onclick="@(() => ToggleVisibility("disposicionesDerogatorias"))">
+                            @(IsVisible("disposicionesDerogatorias") ? "▼" : "►")
+                        </button>
+                        Disposiciones Derogatorias
+                    </h4>
+                    @if (IsVisible("disposicionesDerogatorias"))
                     {
-                        <div class="disposicion">
-                            <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
-                            @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
-                            {
-                                <span class="resumen resumen-disposicion">
-                                    @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
-                                </span>
-                            }
-                            <details>
-                                <summary>Ver texto completo</summary>
-                                <span class="resumen texto-disposicion">
-                                    @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
-                                </span>
-                            </details>
-                        </div>
+                        @foreach (var disposicion in ley.Disposiciones.DisposicionesDerogatorias.Where(d => ContainsSearchTerm(d)))
+                        {
+                            <div class="disposicion">
+                                <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
+                                @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                                {
+                                    <span class="resumen resumen-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
+                                    </span>
+                                }
+                                <details>
+                                    <summary>Ver texto completo</summary>
+                                    <span class="resumen texto-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
+                                    </span>
+                                </details>
+                            </div>
+                        }
                     }
                 }
 
                 @if (ley.Disposiciones.DisposicionesFinales.Any())
                 {
-                    <h4>Disposiciones Finales</h4>
-                    @foreach (var disposicion in ley.Disposiciones.DisposicionesFinales.Where(d => ContainsSearchTerm(d)))
+                    <h4>
+                        <button @onclick="@(() => ToggleVisibility("disposicionesFinales"))">
+                            @(IsVisible("disposicionesFinales") ? "▼" : "►")
+                        </button>
+                        Disposiciones Finales
+                    </h4>
+                    @if (IsVisible("disposicionesFinales"))
                     {
-                        <div class="disposicion">
-                            <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
-                            @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
-                            {
-                                <span class="resumen resumen-disposicion">
-                                    @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
-                                </span>
-                            }
-                            <details>
-                                <summary>Ver texto completo</summary>
-                                <span class="resumen texto-disposicion">
-                                    @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
-                                </span>
-                            </details>
-                        </div>
+                        @foreach (var disposicion in ley.Disposiciones.DisposicionesFinales.Where(d => ContainsSearchTerm(d)))
+                        {
+                            <div class="disposicion">
+                                <h5>@((MarkupString)HighlightText(disposicion.NombreDisposicion))</h5>
+                                @if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+                                {
+                                    <span class="resumen resumen-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.ResumenDisposicion)))
+                                    </span>
+                                }
+                                <details>
+                                    <summary>Ver texto completo</summary>
+                                    <span class="resumen texto-disposicion">
+                                        @((MarkupString)HighlightText(RenderMarkdown(disposicion.TextoCompletoDisposicion)))
+                                    </span>
+                                </details>
+                            </div>
+                        }
                     }
                 }
             }
@@ -376,7 +408,8 @@ else
     private Dictionary<string, bool> visibilityState = new Dictionary<string, bool>();
     private string searchTerm = "";
     private List<Titulo> filteredTitulos = new List<Titulo>();
-
+    // Add a new field to store filtered dispositions
+    private Disposiciones filteredDisposiciones;
 
     private class LeyInfo
     {
@@ -391,6 +424,7 @@ else
         new LeyInfo { Titulo = "Ley de Educación", NombreArchivo = "Ley3.json" }
         // Añade aquí más leyes según sea necesario
     };
+
 
     protected override void OnInitialized()
     {
@@ -557,6 +591,10 @@ else
     {
         visibilityState.Clear();
         visibilityState["disposiciones"] = false;
+        visibilityState["disposicionesAdicionales"] = false;
+        visibilityState["disposicionesTransitorias"] = false;
+        visibilityState["disposicionesDerogatorias"] = false;
+        visibilityState["disposicionesFinales"] = false;
 
         if (ley != null)
         {
@@ -586,7 +624,6 @@ else
             }
         }
     }
-
     private void ToggleVisibility(string key)
     {
         Console.WriteLine($"ToggleVisibility llamado para: {key}");

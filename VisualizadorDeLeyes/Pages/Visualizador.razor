@@ -701,9 +701,26 @@ else
     }
     private bool ContainsSearchTermIgnoreCase(string text)
     {
-        return !string.IsNullOrEmpty(text) && text.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0;
+        var textoSinAcentos = RemoveAccents(text);
+        var searchTermSinAcentos = RemoveAccents(searchTerm);
+        return !string.IsNullOrEmpty(textoSinAcentos) && textoSinAcentos.IndexOf(searchTermSinAcentos, StringComparison.OrdinalIgnoreCase) >= 0;
     }
 
+    private string RemoveAccents(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return input;
+
+        string[] accentedVowels = { "á", "é", "í", "ó", "ú", "ü", "Á", "É", "Í", "Ó", "Ú", "Ü" };
+        string[] unaccentedVowels = { "a", "e", "i", "o", "u", "u", "A", "E", "I", "O", "U", "U" };
+
+        for (int i = 0; i < accentedVowels.Length; i++)
+        {
+            input = input.Replace(accentedVowels[i], unaccentedVowels[i]);
+        }
+
+        return input;
+    }
 
     private void InitializeVisibilityState()
     {
@@ -781,9 +798,10 @@ else
         {
             return text;
         }
-
-        var regex = new System.Text.RegularExpressions.Regex(searchTerm, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-        return regex.Replace(text, match => $"<span class=\"highlight\">{match.Value}</span>");
+        var searchTermSinAcentos=RemoveAccents(searchTerm);
+        var textSinAcentos = RemoveAccents(text);
+        var regex = new System.Text.RegularExpressions.Regex(searchTermSinAcentos, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        return regex.Replace(textSinAcentos, match => $"<span class=\"highlight\">{match.Value}</span>");
     }
 }
 

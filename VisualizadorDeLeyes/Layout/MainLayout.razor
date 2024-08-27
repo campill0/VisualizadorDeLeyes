@@ -2,7 +2,7 @@
 
 <div class="page">
     <div class="sidebar @(_showNavMenu ? "" : "collapsed")">
-        <NavMenu ShowNavMenu="@_showNavMenu" />
+        <NavMenu @bind-ShowNavMenu="_showNavMenu" />
     </div>
     <main>
         <div class="top-row px-4">

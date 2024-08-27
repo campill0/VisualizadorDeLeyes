@@ -125,6 +125,43 @@
         #scrollToTopBtn:hover {
             background-color: #003d82;
         }
+
+
+    .resumen-ley {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+        font-family: monospace;
+    }
+
+    .seleccionado {
+        border-left: 3px solid blue;
+        padding-left: 10px;
+    }
+
+    .titulo, .capitulo, .seccion, .articulo, .disposicion {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    details {
+        margin-left: 20px;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    .highlight {
+        background-color: yellow;
+        font-weight: bold;
+    }
 </style>
 <h1>Visor de Leyes</h1>
 
@@ -134,7 +171,7 @@
         <option value="">Seleccione una ley</option>
         @foreach (var leyInfo in leyesPreexistentes)
         {
-            <option value="@leyInfo.NombreArchivo">@leyInfo.Titulo</option>
+            <option value="@leyInfo.Clave">@leyInfo.Titulo</option>
         }
     </select>
 </div>
@@ -143,6 +180,24 @@
     <h3>O cargar una nueva ley:</h3>
     <InputFile OnChange="@LoadFile" accept=".json" />
 </div>
+
+
+@if (ley != null)
+{
+    <button @onclick="MostrarResumenLey" class="btn btn-primary mt-3">Mostrar Resumen de la Ley</button>
+}
+@if (mostrarResumen)
+{
+    <div class="resumen-ley">
+        <button @onclick="CopiarResumen" class="btn btn-primary mt-2">Copiar Resumen</button>
+
+        <h2>Resumen de la Ley: @ley.NombreLey</h2>
+        @((MarkupString)resumenLey)
+       
+    </div>
+}
+
+
 
 @if (ley == null)
 {
@@ -179,7 +234,7 @@ else
 
         @foreach (var titulo in filteredTitulos)
         {
-            <div class="titulo">
+            <div class="titulo @(elementoSeleccionado == $"titulo-{titulo.NombreTitulo}" ? "seleccionado" : "")">
                 <h3>
                     <button @onclick="@(() => ToggleVisibility($"titulo-{titulo.NombreTitulo}"))">
                         @(IsVisible($"titulo-{titulo.NombreTitulo}") ? "▼" : "►")
@@ -222,7 +277,7 @@ else
                     }
                     @foreach (var capitulo in titulo.Capitulos.Where(c => ContainsSearchTerm(c)))
                     {
-                        <div class="capitulo">
+                        <div class="capitulo @(elementoSeleccionado == $"capitulo-{capitulo.NombreCapitulo}" ? "seleccionado" : "")">
                             <h4>
                                 <button @onclick="@(() => ToggleVisibility($"capitulo-{capitulo.NombreCapitulo}"))">
                                     @(IsVisible($"capitulo-{capitulo.NombreCapitulo}") ? "▼" : "►")
@@ -265,7 +320,7 @@ else
                                 }
                                 @foreach (var seccion in capitulo.Secciones.Where(s => ContainsSearchTerm(s)))
                                 {
-                                    <div class="seccion">
+                                    <div class="seccion @(elementoSeleccionado == $"seccion-{seccion.NombreSeccion}" ? "seleccionado" : "")">
                                         <h5>
                                             <button @onclick="@(() => ToggleVisibility($"seccion-{seccion.NombreSeccion}"))">
                                                 @(IsVisible($"seccion-{seccion.NombreSeccion}") ? "▼" : "►")
@@ -491,13 +546,29 @@ else
         document.addEventListener("scroll", handleScroll);
     }
 </script>
+
+<script>
+    window.copiarAlPortapapeles = function (texto) {
+        navigator.clipboard.writeText(texto).then(function () {
+            alert('Resumen copiado al portapapeles');
+        }, function (err) {
+            console.error('No se pudo copiar el texto: ', err);
+        });
+    }
+</script>
 @code {
     private Ley ley;
     private Dictionary<string, bool> visibilityState = new Dictionary<string, bool>();
     private string searchTerm = "";
     private List<Titulo> filteredTitulos = new List<Titulo>();
     private Disposiciones filteredDisposiciones;
+    private string elementoSeleccionado = null;
 
+     private async Task CopiarResumen()
+    {
+        string textoPlano = System.Text.RegularExpressions.Regex.Replace(resumenLey, "<.*?>", String.Empty);
+        await JSRuntime.InvokeVoidAsync("copiarAlPortapapeles", textoPlano);
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -511,13 +582,14 @@ else
     {
         public string Titulo { get; set; }
         public string NombreArchivo { get; set; }
+        public string Clave { get; set; }
     }
 
     private List<LeyInfo> leyesPreexistentes = new List<LeyInfo>
     {
-        new LeyInfo { Titulo = "Constitución española", NombreArchivo = "Constitucion_espanola.json" },
-        new LeyInfo { Titulo = "Ley de prueba", NombreArchivo = "otraley.json" },
-        new LeyInfo { Titulo = "Ley de Educación", NombreArchivo = "Ley3.json" }
+        new LeyInfo { Titulo = "Constitución española", NombreArchivo = "Constitucion_espanola.json", Clave = "constitucion" },
+    new LeyInfo { Titulo = "Trebep", NombreArchivo = "trebep.json", Clave = "trebep" },
+    new LeyInfo { Titulo = "Ley de Educación", NombreArchivo = "Ley3.json", Clave = "educacion" }
         // Añade aquí más leyes según sea necesario
     };
 
@@ -527,29 +599,115 @@ else
 
         Ley ley1 = new Ley
             {
-                NombreLey = "Ley de Ejemplo",
+                Preambulo = new Preambulo
+                {
+                    ResumenPreambulo="",
+                    TextoCompletoPreambulo=""
+                },
+                NombreLey = "",
+                Titulos= new List<Titulo>()
+                {
+                    new Titulo
+                    {
+Articulos= new List<Articulo>
+                            {
+                               new Articulo
+                               {
+                                   NombreArticulo="",
+                                    NombreArticuloOriginal=true,
+                                    NumeroArticulo=1,
+                                    ResumenArticulo="",
+                                    TextoCompletoArticulo=""
+                               }
+                            },
+                        NombreTitulo="",
+                        ResumenTitulo="",
+                        Capitulos= new List<Capitulo>
+                        {
+                            new Capitulo
+                            {
+
+                                NombreCapitulo="",
+                                ResumenCapitulo="",
+                            Articulos= new List<Articulo>
+                            {
+                               new Articulo
+                               {
+                                   NombreArticulo="",
+                                    NombreArticuloOriginal=true,
+                                    NumeroArticulo=1,
+                                    ResumenArticulo="",
+                                    TextoCompletoArticulo=""
+                               }
+                            },
+                            Secciones= new List<Seccion>
+                            {
+                                new Seccion
+                                {
+                                    NombreSeccion="",
+                                    ResumenSeccion="",
+                                    Articulos= new List<Articulo>
+                                    {
+                                        new Articulo
+                               {
+                                   NombreArticulo="",
+                                    NombreArticuloOriginal=true,
+                                    NumeroArticulo=1,
+                                    ResumenArticulo="",
+                                    TextoCompletoArticulo=""
+                               }
+                                    }
+                                }
+                            
+                            }
+                            }
+                        }
+                    
+                    }
+                },
                 Disposiciones = new Disposiciones
                 {
                     DisposicionesAdicionales = new List<Disposicion>
                 {
                     new Disposicion
                     {
-                        NombreDisposicion = "Primera",
-                        ResumenDisposicion = "Resumen de la primera disposición adicional",
-                        TextoCompletoDisposicion = "Texto completo de la primera disposición adicional"
+                        NombreDisposicion = "",
+                        ResumenDisposicion = "",
+                        TextoCompletoDisposicion = ""
                     }
                 },
                     DisposicionesTransitorias = new List<Disposicion>
                 {
                     new Disposicion
                     {
-                        NombreDisposicion = "Primera Transitoria",
-                        ResumenDisposicion = "Resumen de la primera disposición transitoria",
-                        TextoCompletoDisposicion = "Texto completo de la primera disposición transitoria"
+                        NombreDisposicion = "",
+                        ResumenDisposicion = "",
+                        TextoCompletoDisposicion = ""
                     }
                 },
-                    DisposicionesDerogatorias = new List<Disposicion>(),
-                    DisposicionesFinales = new List<Disposicion>()
+                    DisposicionesDerogatorias = new List<Disposicion>
+                    {
+
+
+                    new Disposicion
+                    {
+                        NombreDisposicion = "",
+                        ResumenDisposicion = "",
+                        TextoCompletoDisposicion = ""
+                    }
+
+                    },
+                    DisposicionesFinales = new List<Disposicion>
+                    {
+                    
+                        new Disposicion
+                    {
+                        NombreDisposicion = "",
+                        ResumenDisposicion = "",
+                        TextoCompletoDisposicion = ""
+                    }
+                    
+                    }
                 }
             };
 
@@ -569,25 +727,33 @@ else
 
     private async Task CargarLeyPreexistente(ChangeEventArgs e)
     {
-        var nombreArchivo = e.Value.ToString();
-        if (!string.IsNullOrEmpty(nombreArchivo))
+        var clave = e.Value.ToString();
+        if (!string.IsNullOrEmpty(clave))
         {
-            try
+            var leySeleccionada = leyesPreexistentes.FirstOrDefault(l => l.Clave == clave);
+            if (leySeleccionada != null)
             {
-                var response = await HttpClient.GetStringAsync($"Leyes/{nombreArchivo}");
-                var options = new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true,
-                        PropertyNamingPolicy = null,
-                        WriteIndented = true
-                    };
-                ley = JsonSerializer.Deserialize<Ley>(response,options);
-                InitializeVisibilityState();
-                StateHasChanged();
+                try
+                {
+                    var response = await HttpClient.GetStringAsync($"Leyes/{leySeleccionada.NombreArchivo}");
+                    var options = new JsonSerializerOptions
+                        {
+                            PropertyNameCaseInsensitive = true,
+                            PropertyNamingPolicy = null,
+                            WriteIndented = true
+                        };
+                    ley = JsonSerializer.Deserialize<Ley>(response, options);
+                    InitializeVisibilityState();
+                    StateHasChanged();
+                }
+                catch (Exception ex)
+                {
+                    await JSRuntime.InvokeVoidAsync("alert", $"Error al cargar la ley preexistente: {ex.Message}");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                await JSRuntime.InvokeVoidAsync("alert", $"Error al cargar la ley preexistente: {ex.Message}");
+                await JSRuntime.InvokeVoidAsync("alert", "Ley no encontrada");
             }
         }
         Search();
@@ -764,10 +930,12 @@ else
         if (visibilityState.ContainsKey(key))
         {
             visibilityState[key] = !visibilityState[key];
+            elementoSeleccionado = visibilityState[key] ? key : null;
         }
         else
         {
             visibilityState[key] = true;
+            elementoSeleccionado = key;
         }
         StateHasChanged();
     }
@@ -803,27 +971,111 @@ else
         var regex = new System.Text.RegularExpressions.Regex(searchTermSinAcentos, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         return regex.Replace(textSinAcentos, match => $"<span class=\"highlight\">{match.Value}</span>");
     }
+
+
+
+     private bool mostrarResumen = false;
+    private string resumenLey = "";
+
+    private void MostrarResumenLey()
+    {
+        mostrarResumen = true;
+        resumenLey = GenerarResumenLey();
+        StateHasChanged();
+    }
+
+    private string GenerarResumenLey()
+    {
+        var resumen = new System.Text.StringBuilder();
+
+        if (string.IsNullOrEmpty(elementoSeleccionado))
+        {
+            // Si no hay elemento seleccionado, generamos el resumen completo
+            // (código original aquí)
+        }
+        else if (elementoSeleccionado.StartsWith("titulo-"))
+        {
+            var tituloSeleccionado = ley.Titulos.FirstOrDefault(t => $"titulo-{t.NombreTitulo}" == elementoSeleccionado);
+            if (tituloSeleccionado != null)
+            {
+                GenerarResumenTitulo(resumen, tituloSeleccionado);
+            }
+        }
+        else if (elementoSeleccionado.StartsWith("capitulo-"))
+        {
+            var capituloSeleccionado = ley.Titulos.SelectMany(t => t.Capitulos).FirstOrDefault(c => $"capitulo-{c.NombreCapitulo}" == elementoSeleccionado);
+            if (capituloSeleccionado != null)
+            {
+                GenerarResumenCapitulo(resumen, capituloSeleccionado);
+            }
+        }
+        // Añadir más condiciones para secciones, artículos, etc. si es necesario
+
+        return RenderMarkdown(resumen.ToString());
+    }
+
+    private void GenerarResumenTitulo(System.Text.StringBuilder resumen, Titulo titulo)
+    {
+        resumen.AppendLine($"## {titulo.NombreTitulo}\n");
+        if (!string.IsNullOrEmpty(titulo.ResumenTitulo))
+        {
+            resumen.AppendLine($"{titulo.ResumenTitulo}\n");
+        }
+
+        foreach (var articulo in titulo.Articulos)
+        {
+            AgregarResumenArticulo(resumen, articulo);
+        }
+
+        foreach (var capitulo in titulo.Capitulos)
+        {
+            GenerarResumenCapitulo(resumen, capitulo);
+        }
+    }
+
+    private void GenerarResumenCapitulo(System.Text.StringBuilder resumen, Capitulo capitulo)
+    {
+        resumen.AppendLine($"### {capitulo.NombreCapitulo}\n");
+        if (!string.IsNullOrEmpty(capitulo.ResumenCapitulo))
+        {
+            resumen.AppendLine($"{capitulo.ResumenCapitulo}\n");
+        }
+
+        foreach (var articulo in capitulo.Articulos)
+        {
+            AgregarResumenArticulo(resumen, articulo);
+        }
+
+        foreach (var seccion in capitulo.Secciones)
+        {
+            GenerarResumenSeccion(resumen, seccion);
+        }
+    }
+
+    private void GenerarResumenSeccion(System.Text.StringBuilder resumen, Seccion seccion)
+    {
+        resumen.AppendLine($"#### {seccion.NombreSeccion}\n");
+        if (!string.IsNullOrEmpty(seccion.ResumenSeccion))
+        {
+            resumen.AppendLine($"{seccion.ResumenSeccion}\n");
+        }
+
+        foreach (var articulo in seccion.Articulos)
+        {
+            AgregarResumenArticulo(resumen, articulo);
+        }
+    }
+
+    private void AgregarResumenArticulo(System.Text.StringBuilder resumen, Articulo articulo)
+    {
+        resumen.AppendLine($"##### Artículo {articulo.NumeroArticulo}: {articulo.NombreArticulo}\n");
+        if (!string.IsNullOrEmpty(articulo.ResumenArticulo))
+        {
+            resumen.AppendLine($"{articulo.ResumenArticulo}\n");
+        }
+    }
 }
 
 <style>
-    .titulo, .capitulo, .seccion, .articulo, .disposicion {
-        margin-left: 20px;
-        margin-bottom: 10px;
-    }
-
-    details {
-        margin-left: 20px;
-    }
-
-    button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 1em;
-    }
-
-    .highlight {
-        background-color: yellow;
-        font-weight: bold;
-    }
+   
 </style>

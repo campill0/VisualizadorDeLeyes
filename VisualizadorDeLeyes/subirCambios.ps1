@@ -2,7 +2,6 @@
 
 # Configuración
 $repoUrl = "https://github.com/campill0/EstudiaLeyes.git"
-$branchName = "main"  # Asumimos que es 'main', cambia a 'master' si es necesario
 $targetPath = "bin\Release\net8.0\browser-wasm\publish\wwwroot"
 
 # Guardar el directorio original
@@ -21,6 +20,15 @@ function Invoke-GitCommand {
         exit 1
     }
     Write-Output $output
+}
+
+# Función para intentar push
+function Try-GitPush {
+    param (
+        [string]$branch
+    )
+    $pushOutput = Invoke-GitCommand "push -f origin $branch" -allowNonZeroExitCode $true
+    return $pushOutput
 }
 
 # Obtener la ruta del script actual
@@ -71,10 +79,34 @@ else {
     Invoke-GitCommand "remote add origin $repoUrl"
 }
 
-# Forzar push
-Invoke-GitCommand "push -f origin $branchName"
+# Obtener el nombre de la rama actual
+$currentBranch = Invoke-GitCommand "rev-parse --abbrev-ref HEAD"
+Write-Output "La rama actual es: $currentBranch"
 
-Write-Output "Repositorio EstudiaLeyes actualizado exitosamente."
+# Lista de ramas para intentar, en orden de prioridad
+$branchesToTry = @($currentBranch, "main", "master")
+
+$pushSuccess = $false
+
+foreach ($branch in $branchesToTry) {
+    Write-Output "Intentando push a la rama: $branch"
+    $pushOutput = Try-GitPush $branch
+    if ($pushOutput -notmatch "error:") {
+        Write-Output "Push exitoso a la rama $branch"
+        $pushSuccess = $true
+        break
+    }
+    else {
+        Write-Output "Fallo al hacer push a la rama $branch. Error: $pushOutput"
+    }
+}
+
+if (-not $pushSuccess) {
+    Write-Error "No se pudo hacer push a ninguna rama. Verifica tu conexión y permisos del repositorio."
+}
+else {
+    Write-Output "Repositorio EstudiaLeyes actualizado exitosamente en la rama $branch."
+}
 
 # Volver al directorio original
 Set-Location -Path $originalPath

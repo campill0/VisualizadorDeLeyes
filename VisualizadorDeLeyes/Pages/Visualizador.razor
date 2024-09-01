@@ -589,7 +589,7 @@ else
     {
         new LeyInfo { Titulo = "Constitución española", NombreArchivo = "Constitucion_espanola.json", Clave = "constitucion" },
     new LeyInfo { Titulo = "Trebep", NombreArchivo = "trebep.json", Clave = "trebep" },
-    new LeyInfo { Titulo = "Ley de Educación", NombreArchivo = "Ley3.json", Clave = "educacion" }
+    new LeyInfo { Titulo = "Ley 39/2025", NombreArchivo = "Ley_39.json", Clave = "ley39" }
         // Añade aquí más leyes según sea necesario
     };
 
@@ -990,28 +990,81 @@ Articulos= new List<Articulo>
 
         if (string.IsNullOrEmpty(elementoSeleccionado))
         {
-            // Si no hay elemento seleccionado, generamos el resumen completo
-            // (código original aquí)
+            // Generar resumen completo de la ley
+            resumen.AppendLine($"# {ley.NombreLey}\n");
+
+            if (ley.Preambulo != null && !string.IsNullOrEmpty(ley.Preambulo.ResumenPreambulo))
+            {
+                resumen.AppendLine("## Preámbulo\n");
+                resumen.AppendLine($"{ley.Preambulo.ResumenPreambulo}\n");
+            }
+
+            foreach (var titulo in ley.Titulos)
+            {
+                GenerarResumenTitulo(resumen, titulo);
+            }
+
+            if (ley.Disposiciones != null)
+            {
+                resumen.AppendLine("## Disposiciones\n");
+
+                if (ley.Disposiciones.DisposicionesAdicionales?.Any() == true)
+                {
+                    resumen.AppendLine("### Disposiciones Adicionales\n");
+                    foreach (var disposicion in ley.Disposiciones.DisposicionesAdicionales)
+                    {
+                        AgregarResumenDisposicion(resumen, disposicion);
+                    }
+                }
+
+                if (ley.Disposiciones.DisposicionesTransitorias?.Any() == true)
+                {
+                    resumen.AppendLine("### Disposiciones Transitorias\n");
+                    foreach (var disposicion in ley.Disposiciones.DisposicionesTransitorias)
+                    {
+                        AgregarResumenDisposicion(resumen, disposicion);
+                    }
+                }
+
+                if (ley.Disposiciones.DisposicionesDerogatorias?.Any() == true)
+                {
+                    resumen.AppendLine("### Disposiciones Derogatorias\n");
+                    foreach (var disposicion in ley.Disposiciones.DisposicionesDerogatorias)
+                    {
+                        AgregarResumenDisposicion(resumen, disposicion);
+                    }
+                }
+
+                if (ley.Disposiciones.DisposicionesFinales?.Any() == true)
+                {
+                    resumen.AppendLine("### Disposiciones Finales\n");
+                    foreach (var disposicion in ley.Disposiciones.DisposicionesFinales)
+                    {
+                        AgregarResumenDisposicion(resumen, disposicion);
+                    }
+                }
+            }
         }
         else if (elementoSeleccionado.StartsWith("titulo-"))
         {
-            var tituloSeleccionado = ley.Titulos.FirstOrDefault(t => $"titulo-{t.NombreTitulo}" == elementoSeleccionado);
-            if (tituloSeleccionado != null)
-            {
-                GenerarResumenTitulo(resumen, tituloSeleccionado);
-            }
+            // Código existente para el resumen del título
         }
         else if (elementoSeleccionado.StartsWith("capitulo-"))
         {
-            var capituloSeleccionado = ley.Titulos.SelectMany(t => t.Capitulos).FirstOrDefault(c => $"capitulo-{c.NombreCapitulo}" == elementoSeleccionado);
-            if (capituloSeleccionado != null)
-            {
-                GenerarResumenCapitulo(resumen, capituloSeleccionado);
-            }
+            // Código existente para el resumen del capítulo
         }
-        // Añadir más condiciones para secciones, artículos, etc. si es necesario
+        // Mantener el resto del código existente para otros casos
 
         return RenderMarkdown(resumen.ToString());
+    }
+
+    private void AgregarResumenDisposicion(System.Text.StringBuilder resumen, Disposicion disposicion)
+    {
+        resumen.AppendLine($"#### {disposicion.NombreDisposicion}\n");
+        if (!string.IsNullOrEmpty(disposicion.ResumenDisposicion))
+        {
+            resumen.AppendLine($"{disposicion.ResumenDisposicion}\n");
+        }
     }
 
     private void GenerarResumenTitulo(System.Text.StringBuilder resumen, Titulo titulo)

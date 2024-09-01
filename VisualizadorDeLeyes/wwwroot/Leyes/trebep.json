@@ -465,11 +465,11 @@
     },
     {
       "NombreTitulo": "TÍTULO IV. Adquisición y pérdida de la relación de servicio",
-      "ResumenTitulo": "",
+      "ResumenTitulo": "**Adquisición y pérdida de la relación de servicio**:\n\n**Acceso al empleo público**: \n- Basado en principios de igualdad, mérito y capacidad.\n- Requisitos generales: nacionalidad española (con excepciones), capacidad funcional, edad mínima 16 años, no estar inhabilitado, poseer titulación exigida.\n- Acceso de nacionales de otros Estados: posible para ciudadanos UE y familiares, con algunas restricciones.\n- Cupo reservado para personas con discapacidad: mínimo 7% de vacantes.\n\n**Sistemas selectivos**:\n- Oposición y concurso-oposición para funcionarios de carrera.\n- Oposición, concurso-oposición o concurso para personal laboral fijo.\n\n**Adquisición de condición de funcionario**: \n1. Superar proceso selectivo\n2. Nombramiento oficial\n3. Acatamiento de la Constitución\n4. Toma de posesión\n\n**Pérdida de condición de funcionario**:\n- Causas: renuncia, pérdida de nacionalidad, jubilación, sanción disciplinaria, inhabilitación.\n\n**Jubilación**:\n- Tipos: voluntaria, forzosa (65 años, extensible hasta 70), por incapacidad permanente.\n\n**Rehabilitación**: \n- Posible en casos de pérdida de nacionalidad o jubilación por incapacidad.\n- Excepcional en casos de inhabilitación.",
       "Capitulos": [
         {
           "NombreCapitulo": "CAPÍTULO I. Acceso al empleo público y adquisición de la relación de servicio",
-          "ResumenCapitulo": "",
+          "ResumenCapitulo": "Este capítulo aborda el **acceso al empleo público** y la adquisición de la relación de servicio:\n\n- **Principios rectores**: Igualdad, mérito, capacidad, publicidad, transparencia, imparcialidad y agilidad en los procesos selectivos.\n\n- **Requisitos generales**: \n  - Nacionalidad española (con excepciones)\n  - Capacidad funcional\n  - Edad mínima de 16 años\n  - No estar inhabilitado \n  - Titulación exigida\n\n- **Acceso de extranjeros**: Se permite bajo ciertas condiciones a nacionales de la UE y otros países.\n\n- **Personas con discapacidad**: Se reserva un cupo mínimo del 7% de las plazas.\n\n- **Órganos de selección**: Deben ser imparciales y profesionales.\n\n- **Sistemas selectivos**: \n  - Funcionarios: Oposición y concurso-oposición\n  - Personal laboral: Oposición, concurso-oposición o concurso \n\n- **Adquisición de la condición de funcionario**: \n  1. Superar el proceso selectivo\n  2. Nombramiento oficial\n  3. Acatamiento de la Constitución\n  4. Toma de posesión",
           "Secciones": [],
           "Articulos": [
             {
@@ -532,7 +532,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO II. Pérdida de la relación de servicio",
-          "ResumenCapitulo": "",
+		  "ResumenCapitulo": "**Causas de pérdida de la condición de funcionario de carrera**:\n\n- Renuncia\n- Pérdida de nacionalidad\n- Jubilación total\n- Sanción disciplinaria firme de separación\n- Pena de inhabilitación firme\n\n**Renuncia**: \n- Debe ser por escrito y aceptada por la Administración\n- No se acepta si hay expediente disciplinario o proceso judicial abierto\n- No inhabilita para reingresar\n\n**Pérdida de nacionalidad**:\n- Afecta si se pierde la nacionalidad española, de la UE o de estados con libre circulación de trabajadores\n\n**Pena de inhabilitación**:\n- **Absoluta**: pérdida de todos los empleos\n- **Especial**: pérdida de empleos especificados en la sentencia\n\n**Jubilación**:\n1. **Tipos**:\n   - Voluntaria: a solicitud del funcionario\n   - Forzosa: al cumplir la edad establecida\n   - Por incapacidad permanente\n\n2. **Edad de jubilación forzosa**: 65 años, con posibilidad de prolongación hasta los 70\n\n**Rehabilitación**:\n- Posible en casos de pérdida de nacionalidad o jubilación por incapacidad permanente\n- Excepcionalmente, en casos de inhabilitación, a criterio de la Administración",
           "Secciones": [],
           "Articulos": [
             {
@@ -584,11 +584,11 @@
     },
     {
       "NombreTitulo": "TÍTULO V. Ordenación de la actividad profesional",
-      "ResumenTitulo": "",
+      "ResumenTitulo": "**Planificación de recursos humanos**:\n- **Objetivo**: Contribuir a la eficacia y eficiencia en la prestación de servicios.\n- **Planes de ordenación**: Incluyen medidas como análisis de personal, previsiones de organización, movilidad, y oferta de empleo público.\n\n**Oferta de empleo público**:\n- Recoge necesidades de personal con asignación presupuestaria.\n- Se publica anualmente y debe ejecutarse en 3 años máximo.\n\n**Registros de personal**:\n- Cada Administración constituye uno con datos de su personal.\n- Se impulsa la gestión integrada de recursos humanos.\n\n**Estructuración del empleo público**:\n- Las Administraciones estructuran sus recursos según normas de selección, promoción y movilidad.\n- **Puestos de trabajo**: Pueden agruparse y se ordenan en relaciones públicas.\n\n**Cuerpos y escalas**:\n- Agrupan funcionarios con competencias comunes.\n- Se clasifican en grupos según titulación:\n  - **Grupo A** (A1 y A2): Grado universitario\n  - **Grupo B**: Técnico Superior\n  - **Grupo C** (C1 y C2): Bachiller/Técnico y ESO respectivamente\n\n**Provisión de puestos y movilidad**:\n- **Principios**: Igualdad, mérito, capacidad y publicidad.\n- **Métodos**: Concurso (normal) y libre designación (excepcional).\n- **Movilidad**: Posible entre administraciones y por razones especiales (violencia de género, terrorismo).\n\n**Personal laboral**:\n- Clasificación y movilidad según convenios colectivos.\n\nSe fomenta la **movilidad interadministrativa** para mejor aprovechamiento de recursos humanos.",
       "Capitulos": [
         {
           "NombreCapitulo": "CAPÍTULO I. Planificación de recursos humanos",
-          "ResumenCapitulo": "",
+          "ResumenCapitulo": "**Planificación de recursos humanos**:\n\n**Objetivos**: Contribuir a la eficacia en servicios y eficiencia en recursos económicos.\n\n**Instrumentos**:\n1. **Planes de ordenación**: Incluyen análisis de personal, previsiones organizativas, medidas de movilidad, promoción interna y formación.\n2. **Oferta de empleo público**: Atiende necesidades de personal con presupuesto asignado.\n\n**Características clave**:\n- Plazo máximo de ejecución: 3 años.\n- Publicación anual en Diario oficial.\n- Puede incluir medidas de planificación de recursos.\n\n**Registros de personal**:\n- Cada Administración constituye su propio registro.\n- Contenidos mínimos comunes establecidos por convenio.\n- Se impulsa la gestión integrada de recursos humanos.\n\n**Cooperación interadministrativa**: Para Entidades Locales con capacidad limitada.",
           "Secciones": [],
           "Articulos": [
             {
@@ -616,7 +616,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO II. Estructuración del empleo público",
-          "ResumenCapitulo": "",
+          "ResumenCapitulo": "**Estructuración del empleo público**:\n\n**Recursos humanos**: Las Administraciones Públicas estructuran sus recursos según normas de selección, promoción, movilidad y distribución de funciones.\n\n**Puestos de trabajo**:\n- **Derecho**: Los empleados tienen derecho al desempeño de un puesto.\n- **Asignación**: Posibilidad de asignar funciones distintas si son adecuadas y justificadas.\n- **Agrupación**: Pueden agruparse por características para ordenar selección, formación y movilidad.\n\n**Ordenación**:\n- Uso de relaciones de puestos de trabajo u instrumentos similares.\n- **Contenido mínimo**: Denominación, grupos, cuerpos/escalas, sistemas de provisión y retribuciones complementarias.\n- **Publicidad**: Estos instrumentos serán públicos.\n\n**Cuerpos y escalas**:\n- **Agrupación**: Por competencias, capacidades y conocimientos comunes.\n- **Creación/modificación**: Por ley de Cortes Generales o asambleas autonómicas.\n\n**Clasificación profesional**:\n- **Grupo A**: Subgrupos A1 y A2 (título universitario de Grado).\n- **Grupo B**: Título de Técnico Superior.\n- **Grupo C**: Subgrupos C1 (Bachiller o Técnico) y C2 (ESO).\n\n**Personal laboral**: Clasificado según legislación laboral.",
           "Secciones": [],
           "Articulos": [
             {
@@ -665,7 +665,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO III. Provisión de puestos de trabajo y movilidad",
-          "ResumenCapitulo": "",
+          "ResumenCapitulo": "**Provisión de puestos de trabajo y movilidad**:\n\n**Principios y procedimientos**:\n- Basados en igualdad, mérito, capacidad y publicidad.\n- Métodos principales: **concurso** y **libre designación** con convocatoria pública.\n\n**Concurso**:\n- Procedimiento normal de provisión.\n- Valoración de méritos y capacidades por órganos técnicos.\n- Posibilidad de puntuación adicional para víctimas del terrorismo.\n\n**Libre designación**:\n- Apreciación discrecional de idoneidad.\n- Para puestos de especial responsabilidad y confianza.\n\n**Movilidad**:\n- **Voluntaria**: Reglas establecidas por cada Administración.\n- **Forzosa**: Por necesidades de servicio, respetando condiciones esenciales.\n- **Especial**: Para víctimas de violencia de género, sexual o terrorista.\n\n**Movilidad interadministrativa**:\n- Medidas para mejor aprovechamiento de recursos humanos.\n- Criterios de homologación establecidos por la Conferencia Sectorial.\n\n**Personal laboral**:\n- Provisión según convenios colectivos o sistema de funcionarios.",
           "Secciones": [],
           "Articulos": [
             {
@@ -725,7 +725,7 @@
     },
     {
       "NombreTitulo": "TÍTULO VI. Situaciones administrativas",
-      "ResumenTitulo": "",
+      "ResumenTitulo": "**Título VI: Situaciones administrativas**\n\n**Situaciones administrativas de funcionarios de carrera**:\n- Servicio activo\n- Servicios especiales\n- Servicio en otras Administraciones Públicas\n- Excedencia\n- Suspensión de funciones\n\n**Servicio activo**:\n- Funcionarios que prestan servicios en su condición de funcionarios públicos\n- Gozan de todos los derechos y están sujetos a deberes y responsabilidades\n\n**Servicios especiales**:\n- Aplicable a funcionarios designados para cargos políticos, misiones internacionales, etc.\n- Mantienen derechos y se les computa tiempo a efectos de ascensos y trienios\n\n**Servicio en otras Administraciones Públicas**:\n- Funcionarios que obtienen destino en otra Administración\n- Mantienen derechos en la Administración de origen\n\n**Excedencia**:\n**Modalidades**:\n- Voluntaria por interés particular\n- Voluntaria por agrupación familiar\n- Por cuidado de familiares\n- Por violencia de género o sexual\n- Por violencia terrorista\n\n**Suspensión de funciones**:\n- Privación temporal de funciones y derechos\n- Puede ser firme (por sentencia o sanción) o provisional\n\n**Reingreso al servicio activo**:\n- Regulado reglamentariamente según situación de procedencia\n\n**Personal laboral**:\n- Regido por Estatuto de los Trabajadores y Convenios Colectivos aplicables",
       "Capitulos": [],
       "Articulos": [
         {
@@ -789,7 +789,7 @@
     },
     {
       "NombreTitulo": "TÍTULO VII. Régimen disciplinario",
-      "ResumenTitulo": "",
+      "ResumenTitulo": "**Título VII: Régimen disciplinario**\n\n**Responsabilidad disciplinaria**:\n- Aplicable a funcionarios públicos y personal laboral\n- Incluye a inductores y encubridores de faltas graves\n\n**Ejercicio de la potestad disciplinaria**:\n- Principios: legalidad, irretroactividad, proporcionalidad, culpabilidad, presunción de inocencia\n- Suspensión del procedimiento si hay indicios de criminalidad\n\n**Faltas disciplinarias**:\n**Clasificación**: muy graves, graves y leves\n\n**Faltas muy graves** (ejemplos):\n- Discriminación y acoso\n- Abandono del servicio\n- Violación de imparcialidad\n- Acoso laboral\n\n**Faltas graves y leves**: establecidas por ley o convenios colectivos\n\n**Sanciones**:\n- Separación del servicio (funcionarios)\n- Despido disciplinario (personal laboral)\n- Suspensión de funciones\n- Traslado forzoso\n- Demérito\n- Apercibimiento\n\n**Prescripción**:\n- Faltas muy graves: 3 años\n- Faltas graves: 2 años\n- Faltas leves: 6 meses\n\n**Procedimiento disciplinario**:\n- Separación entre fase instructora y sancionadora\n- Posibilidad de medidas provisionales\n- Suspensión provisional: máximo 6 meses (con excepciones)\n- Derechos del funcionario suspenso provisional" ,
       "Capitulos": [],
       "Articulos": [
         {
@@ -839,8 +839,8 @@
     },
     {
       "NombreTitulo": "TÍTULO VIII. Cooperación entre las Administraciones Públicas",
-      "ResumenTitulo": "",
-      "Capitulos": [],
+      "ResumenTitulo": "**Cooperación entre Administraciones Públicas**:\n\n**Principios fundamentales**: Las Administraciones Públicas se relacionan bajo principios de cooperación y colaboración, respetando competencias mutuas.\n\n**Órganos de cooperación**:\n1. **Conferencia Sectorial de Administración Pública**: Órgano de cooperación entre diferentes niveles administrativos.\n2. **Comisión de Coordinación del Empleo Público**: Órgano técnico dependiente de la Conferencia Sectorial.\n\n**Funciones de la Comisión**:\n- **Garantizar principios constitucionales** en el acceso al empleo público.\n- **Analizar proyectos legislativos** en materia de empleo público.\n- **Elaborar estudios e informes** sobre el empleo público.\n\n**Composición de la Comisión**:\n- Titulares de órganos directivos de recursos humanos de distintas administraciones.\n- Representantes de la Administración Local.\n\n**Organización**: La Comisión elaborará sus propias normas de organización y funcionamiento.",	  
+	  "Capitulos": [],
       "Articulos": [
         {
           "numeroArticulo": 99,

@@ -8,7 +8,7 @@
   "Titulos": [
     {
       "NombreTitulo": "TÍTULO PRELIMINAR",
-      "ResumenTitulo": "Establece los principios básicos del Estado español.",
+      "ResumenTitulo":  "**Forma de Estado**: España es un Estado social y democrático de Derecho con Monarquía parlamentaria.\n\n**Valores fundamentales**: Libertad, justicia, igualdad y pluralismo político.\n\n**Soberanía**: Reside en el pueblo español.\n\n**Unidad y autonomía**: Se fundamenta en la unidad de la Nación española, reconociendo el derecho a la autonomía de nacionalidades y regiones.\n\n**Lenguas oficiales**: El castellano es la lengua oficial del Estado. Otras lenguas son oficiales en sus respectivas Comunidades Autónomas.\n\n**Símbolos nacionales**: Describe la bandera de España y permite banderas propias de las Comunidades Autónomas.\n\n**Capital**: Madrid es la capital del Estado.\n\n**Partidos políticos y sindicatos**: Son fundamentales para la participación política y la defensa de intereses económicos y sociales.\n\n**Fuerzas Armadas**: Su misión es garantizar la soberanía, independencia y ordenamiento constitucional.\n\n**Principios legales**: Establece la sujeción a la Constitución, la promoción de la igualdad, y garantiza principios como legalidad, jerarquía normativa y seguridad jurídica.",
       "Articulos": [
         {
           "NumeroArticulo": 1,
@@ -80,7 +80,7 @@
     },
     {
       "NombreTitulo": "TÍTULO I. De los derechos y deberes fundamentales",
-      "ResumenTitulo": "Establece los derechos y deberes fundamentales de los ciudadanos españoles.",
+      "ResumenTitulo": "**Título I: Derechos y Deberes Fundamentales**\n\n**Dignidad y derechos**: Fundamento del orden político y paz social.\n**Interpretación**: Conforme a la Declaración Universal de Derechos Humanos y tratados internacionales.\n\n**Capítulo Primero: Españoles y Extranjeros**\n\n**Nacionalidad**: Se adquiere, conserva y pierde según la ley.\n**Mayoría de edad**: A los 18 años.\n**Extranjeros**: Gozan de libertades públicas según tratados y leyes.\n\n**Capítulo Segundo: Derechos y Libertades**\n\n**Igualdad**: Ante la ley, sin discriminación.\n**Derecho a la vida**: Y a la integridad física y moral.\n**Libertad ideológica y religiosa**: Garantizada.\n**Libertad personal**: Detención preventiva limitada a 72 horas.\n**Intimidad**: Inviolabilidad del domicilio y secreto de comunicaciones.\n**Libertad de residencia y circulación**: Dentro y fuera de España.\n**Libertad de expresión**: Incluye producción artística y científica.\n**Reunión y manifestación**: Pacífica y sin armas.\n**Asociación**: Libre, excepto las ilegales o paramilitares.\n**Participación política**: Sufragio universal.\n**Tutela judicial**: Derecho a defensa y debido proceso.\n**Principio de legalidad penal**: No hay pena sin ley previa.\n**Educación**: Derecho universal, obligatoria y gratuita en nivel básico.\n**Sindicación y huelga**: Derechos reconocidos.\n**Petición**: Derecho de los españoles.\n\n**Sección 2ª: Derechos y Deberes de los Ciudadanos**\n\n**Defensa de España**: Derecho y deber.\n**Tributos**: Contribución justa al gasto público.\n**Matrimonio**: Igualdad jurídica entre cónyuges.\n**Propiedad privada**: Reconocida, con función social.\n**Trabajo**: Derecho y deber, sin discriminación.\n**Negociación colectiva**: Garantizada por ley.\n**Libertad de empresa**: En economía de mercado.\n\n**Capítulo Tercero: Principios de Política Social y Económica**\n\n**Familia**: Protección social, económica y jurídica.\n**Progreso socioeconómico**: Promoción de condiciones favorables.\n**Seguridad Social**: Régimen público garantizado.\n**Salud**: Derecho a la protección.\n**Cultura**: Promoción del acceso.\n**Medio ambiente**: Derecho a disfrutarlo y deber de conservarlo.\n**Vivienda**: Derecho a una digna y adecuada.\n**Discapacidad**: Protección especial e inclusión.\n**Tercera edad**: Garantía de suficiencia económica.\n**Consumidores**: Protección de sus derechos.\n\n**Capítulo Cuarto: Garantías de Libertades y Derechos Fundamentales**\n\n**Vinculación**: Los derechos vinculan a todos los poderes públicos.\n**Defensor del Pueblo**: Alto comisionado para la defensa de derechos.\n\n**Capítulo Quinto: Suspensión de Derechos y Libertades**\n\n**Suspensión**: Posible en estados de excepción o sitio.",
       "Articulos": [
         {
           "NumeroArticulo": 10,
@@ -93,7 +93,7 @@
       "Capitulos": [
         {
           "NombreCapitulo": "CAPÍTULO PRIMERO. De los españoles y los extranjeros",
-          "ResumenCapitulo": "Define quiénes son españoles y los derechos de los extranjeros.",
+          "ResumenCapitulo": "**Nacionalidad española**: Se adquiere, conserva y pierde según la ley. Ningún español de origen puede ser privado de ella.\n\n**Tratados de doble nacionalidad**: El Estado puede concertarlos con países iberoamericanos o con especial vinculación a España.\n\n**Mayoría de edad**: Los españoles son mayores a los 18 años.\n\n**Derechos de extranjeros**: Gozan de libertades públicas según tratados y leyes.\n\n**Derechos exclusivos**: Solo españoles tienen derechos del artículo 23, salvo excepciones en elecciones municipales.\n\n**Extradición**: Se concede por tratado o ley, excluyendo delitos políticos (no incluye terrorismo).\n\n**Derecho de asilo**: La ley determina condiciones para ciudadanos extranjeros y apátridas.",
           "Articulos": [
             {
               "NumeroArticulo": 11,
@@ -123,7 +123,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO SEGUNDO. Derechos y libertades",
-          "ResumenCapitulo": "Enumera los derechos y libertades fundamentales de los ciudadanos.",
+          "ResumenCapitulo": "**Igualdad ante la ley**: Se prohíbe la discriminación por cualquier condición.\n\n**Derechos fundamentales**:\n- **Derecho a la vida e integridad**: Se prohíbe la tortura y se abole la pena de muerte.\n- **Libertad ideológica y religiosa**: Garantizada sin más límites que el orden público.\n- **Libertad y seguridad personal**: Incluye garantías en detenciones y el procedimiento de habeas corpus.\n- **Derecho al honor e intimidad**: Inviolabilidad del domicilio y secreto de comunicaciones.\n- **Libertad de residencia y circulación**: Incluye entrar y salir libremente de España.\n- **Libertad de expresión**: Incluye producción artística y científica, sin censura previa.\n- **Derecho de reunión**: Pacífica y sin armas, sin autorización previa.\n- **Derecho de asociación**: Prohibidas las secretas y paramilitares.\n- **Participación política**: Derecho a participar en asuntos públicos y acceder a cargos públicos.\n- **Tutela judicial efectiva**: Incluye presunción de inocencia y derecho a la defensa.\n- **Principio de legalidad penal**: No hay pena sin ley previa.\n- **Derecho a la educación**: Obligatoria y gratuita, con libertad de enseñanza.\n- **Libertad sindical y derecho a huelga**: Para defensa de intereses de trabajadores.\n- **Derecho de petición**: Individual y colectiva.\n\n**Deberes y derechos de los ciudadanos**:\n- **Defensa de España**: Derecho y deber, con regulación de objeción de conciencia.\n- **Sostenimiento de gastos públicos**: Sistema tributario justo.\n- **Matrimonio**: Igualdad jurídica entre hombre y mujer.\n- **Propiedad privada y herencia**: Reconocidas con función social.\n- **Derecho de fundación**: Para fines de interés general.\n- **Derecho y deber de trabajar**: Sin discriminación, con remuneración suficiente.\n- **Colegios Profesionales**: Regulados por ley, con estructura democrática.\n- **Negociación colectiva**: Garantizada entre trabajadores y empresarios.\n- **Libertad de empresa**: En el marco de la economía de mercado." ,
           "Articulos": [
             {
               "NumeroArticulo": 14,
@@ -136,7 +136,7 @@
           "Secciones": [
             {
               "NombreSeccion": "Sección 1.ª De los derechos fundamentales y de las libertades públicas",
-              "ResumenSeccion": "Detalla los derechos fundamentales y libertades públicas.",
+              "ResumenSeccion": "**Derechos fundamentales y libertades públicas**:\n\n**Derecho a la vida**: Se garantiza el derecho a la vida e integridad física y moral. Se prohíbe la tortura y se abole la pena de muerte, excepto en tiempos de guerra según leyes militares.\n\n**Libertad ideológica y religiosa**: Se garantiza la libertad de pensamiento y culto. El Estado es aconfesional pero coopera con la Iglesia Católica y otras confesiones.\n\n**Libertad y seguridad personal**: Se protege contra detenciones arbitrarias. La detención preventiva tiene un límite de 72 horas. Se garantiza el derecho a un abogado y al habeas corpus.\n\n**Derecho a la intimidad**: Se protege el honor, la intimidad y la propia imagen. El domicilio es inviolable y se garantiza el secreto de las comunicaciones.\n\n**Libertad de residencia y circulación**: Los españoles pueden elegir libremente su residencia y circular por el territorio nacional.\n\n**Libertad de expresión**: Se protege la libre expresión de ideas, la producción artística y científica, y el derecho a recibir información veraz.\n\n**Derecho de reunión y manifestación**: Se reconoce el derecho de reunión pacífica sin autorización previa.\n\n**Derecho de asociación**: Se garantiza, excepto para fines delictivos. Se prohíben asociaciones secretas y paramilitares.\n\n**Participación política**: Los ciudadanos tienen derecho a participar en asuntos públicos y acceder a cargos públicos.\n\n**Tutela judicial efectiva**: Se garantiza el acceso a la justicia, el derecho a un juez imparcial, a la defensa, y a la presunción de inocencia.\n\n**Principio de legalidad penal**: Nadie puede ser condenado por acciones no tipificadas como delito en el momento de cometerse.\n\n**Derecho a la educación**: Se reconoce el derecho a la educación y la libertad de enseñanza. La educación básica es obligatoria y gratuita.\n\n**Libertad sindical y derecho a huelga**: Se reconoce el derecho a sindicarse libremente y a la huelga.\n\n**Derecho de petición**: Todos los españoles pueden realizar peticiones individuales o colectivas por escrito.",
               "Articulos": [
                 {
                   "NumeroArticulo": 15,
@@ -247,7 +247,7 @@
             },
             {
               "NombreSeccion": "Sección 2.ª De los derechos y deberes de los ciudadanos",
-              "ResumenSeccion": "Establece los derechos y deberes de los ciudadanos españoles.",
+              "ResumenSeccion": "**Derechos y deberes ciudadanos**:\n\n**Defensa nacional**: Derecho y deber de defender España. Ley regula obligaciones militares y objeción de conciencia.\n\n**Contribución fiscal**: Todos contribuyen según capacidad económica. Sistema tributario justo, igualitario y progresivo.\n\n**Matrimonio**: Derecho a contraer matrimonio con igualdad jurídica entre hombre y mujer.\n\n**Propiedad**: Se reconoce el derecho a la propiedad privada y herencia, con función social.\n\n**Fundaciones**: Derecho a fundar para fines de interés general.\n\n**Trabajo**: Deber de trabajar y derecho al trabajo, libre elección de profesión, promoción y remuneración justa.\n\n**Colegios Profesionales**: Ley regula su régimen jurídico con estructura democrática.\n\n**Negociación colectiva**: Garantía de negociación entre trabajadores y empresarios.\n\n**Libertad de empresa**: Reconocida en el marco de la economía de mercado.",
               "Articulos": [
                 {
                   "NumeroArticulo": 30,
@@ -318,7 +318,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO TERCERO. De los principios rectores de la política social y económica",
-          "ResumenCapitulo": "Establece los principios que deben guiar la política social y económica del Estado.",
+          "ResumenCapitulo": "**Protección familiar y derechos sociales**:\n- Protección integral de la familia, hijos y madres.\n- Asistencia de padres a hijos.\n- Protección internacional de los niños.\n\n**Progreso socioeconómico**:\n- Promoción de condiciones favorables para el progreso y distribución equitativa de la renta.\n- Fomento del pleno empleo.\n- Garantías laborales: formación, seguridad, descanso.\n\n**Seguridad Social**:\n- Régimen público para todos los ciudadanos.\n- Asistencia y prestaciones ante necesidades, especialmente desempleo.\n\n**Trabajadores en el extranjero**:\n- Salvaguardia de derechos y política de retorno.\n\n**Salud y bienestar**:\n- Derecho a la protección de la salud.\n- Organización de la salud pública.\n- Fomento de educación sanitaria, física y deporte.\n\n**Cultura y ciencia**:\n- Promoción del acceso a la cultura.\n- Fomento de la investigación científica y técnica.\n\n**Medio ambiente**:\n- Derecho a un ambiente adecuado.\n- Uso racional de recursos naturales.\n- Sanciones por daños ambientales.\n\n**Patrimonio**:\n- Conservación y enriquecimiento del patrimonio histórico-cultural.\n\n**Vivienda**:\n- Derecho a una vivienda digna.\n- Regulación del suelo para evitar especulación.\n\n**Juventud**:\n- Promoción de la participación juvenil.\n\n**Personas con discapacidad**:\n- Igualdad de derechos y protección especial.\n- Políticas de autonomía e inclusión.\n\n**Tercera edad**:\n- Garantía de pensiones adecuadas.\n- Sistema de servicios sociales.\n\n**Consumidores y usuarios**:\n- Protección de seguridad, salud e intereses económicos.\n- Promoción de información y educación.\n- Regulación del comercio interior.\n\n**Organizaciones profesionales**:\n- Regulación legal y estructura democrática.",
           "Articulos": [
             {
               "NumeroArticulo": 39,
@@ -423,7 +423,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO CUARTO. De las garantías de las libertades y derechos fundamentales",
-          "ResumenCapitulo": "Define los mecanismos de protección de los derechos y libertades.",
+          "ResumenCapitulo": "**Garantías de libertades y derechos fundamentales:**\n\n**Vinculación de poderes públicos:** Los derechos y libertades del Capítulo segundo vinculan a todos los poderes públicos.\n\n**Regulación por ley:** Solo mediante ley se puede regular el ejercicio de estos derechos, respetando su **contenido esencial**.\n\n**Tutela judicial:** Los ciudadanos pueden recabar tutela de libertades y derechos ante:\n- Tribunales ordinarios: Mediante procedimiento **preferente y sumario**.\n- Tribunal Constitucional: A través del **recurso de amparo**.\n\n**Principios del Capítulo tercero:** Informarán la legislación, práctica judicial y actuación de poderes públicos.\n\n**Defensor del Pueblo:**\n- Regulado por **ley orgánica**.\n- **Alto comisionado** de las Cortes Generales.\n- Función: Defender derechos del Título I.\n- Supervisará la actividad de la Administración.\n- Rendirá cuentas a las Cortes Generales." ,
           "Articulos": [
             {
               "NumeroArticulo": 53,
@@ -443,7 +443,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO QUINTO. De la suspensión de los derechos y libertades",
-          "ResumenCapitulo": "Regula la suspensión de derechos y libertades en casos excepcionales.",
+          "ResumenCapitulo": "**Capítulo Quinto: De la suspensión de los derechos y libertades**\n\n**Artículo 55:**\n\n1. **Suspensión de derechos:** Se pueden suspender ciertos derechos fundamentales (artículos 17, 18.2-3, 19, 20.1a-d, 20.5, 21, 28.2 y 37.2) durante estados de excepción o sitio, según la Constitución. **Excepción:** El artículo 17.3 no se suspende en estado de excepción.\n\n2. **Suspensión individual:** Una **ley orgánica** puede establecer cómo suspender individualmente algunos derechos (17.2 y 18.2-3) en investigaciones sobre **bandas armadas o terrorismo**, con **control judicial y parlamentario**.\n\n3. **Responsabilidad penal:** El uso injustificado o abusivo de estas facultades se considera **violación de derechos** y conlleva responsabilidad penal.",
           "Articulos": [
             {
               "NumeroArticulo": 55,
@@ -459,7 +459,7 @@
     },
     {
       "NombreTitulo": "TÍTULO II. De la Corona",
-      "ResumenTitulo": "Define el papel y las funciones del Rey como Jefe del Estado.",
+      "ResumenTitulo": "**El Rey**: Jefe del Estado y símbolo de unidad. Funciones: arbitrar instituciones, representación internacional.\n\n**Sucesión**: Hereditaria, primogenitura. Príncipe de Asturias: heredero.\n\n**Regencia**: En caso de minoría de edad o inhabilitación del Rey.\n\n**Funciones del Rey**:\n- **Sancionar leyes**: Promulgar y hacer cumplir.\n- **Convocar Cortes**: Disolver y convocar elecciones.\n- **Nombramientos**: Proponer Presidente del Gobierno y ministros.\n- **Fuerzas Armadas**: Mando supremo.\n- **Relaciones internacionales**: Acreditar embajadores, tratados.\n\n**Responsabilidad**: Rey inviolable, actos refrendados por Gobierno.\n\n**Casa Real**: Presupuesto propio, libre nombramiento de personal.\n\n**Juramento**: Rey y heredero juran fidelidad a la Constitución.\n\n**Limitaciones**: Reina consorte sin funciones constitucionales. Incompatibilidades en Regencia y tutoría.",
       "Articulos": [
         {
           "NumeroArticulo": 56,

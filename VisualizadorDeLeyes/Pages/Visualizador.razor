@@ -162,6 +162,60 @@
         background-color: yellow;
         font-weight: bold;
     }
+
+    .filter-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .filter-item {
+        margin-bottom: 5px;
+    }
+
+    .filter-indent {
+        margin-left: 20px;
+    }
+
+    .filter-accordion {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .accordion-button {
+        background-color: #f1f1f1;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+        .accordion-button:hover {
+            background-color: #ddd;
+        }
+
+    .accordion-content {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+        .accordion-content.open {
+            max-height: 1000px; /* Ajusta este valor según sea necesario */
+        }
+
+    .filter-item {
+        margin-bottom: 5px;
+    }
+
+    .filter-indent {
+        margin-left: 20px;
+    }
 </style>
 <h1>Visor de Leyes</h1>
 
@@ -175,6 +229,42 @@
         }
     </select>
 </div>
+
+@if (ley != null)
+{
+    <div class="filter-accordion">
+        <button class="accordion-button" @onclick="ToggleAccordion">Filtros</button>
+        <div class="accordion-content @(isAccordionOpen ? "open" : "")">
+            @foreach (var titulo in filters)
+            {
+                <div class="filter-item">
+                    <label>
+                        <input type="checkbox" checked="@titulo.IsSelected" @onchange="async (e) => { await UpdateFilterAndApply(titulo, (bool)e.Value); }" />
+                        @titulo.Name
+                    </label>
+                    @foreach (var capitulo in titulo.Children)
+                    {
+                        <div class="filter-item filter-indent">
+                            <label>
+                                <input type="checkbox" checked="@capitulo.IsSelected" @onchange="async (e) => { await UpdateFilterAndApply(capitulo, (bool)e.Value); }" />
+                                @capitulo.Name
+                            </label>
+                            @foreach (var seccion in capitulo.Children)
+                            {
+                                <div class="filter-item filter-indent">
+                                    <label>
+                                        <input type="checkbox" checked="@seccion.IsSelected" @onchange="async (e) => { await UpdateFilterAndApply(seccion, (bool)e.Value); }" />
+                                        @seccion.Name
+                                    </label>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
 
 <div>
     <h3>O cargar una nueva ley:</h3>
@@ -557,12 +647,27 @@ else
     }
 </script>
 @code {
+    private bool isAccordionOpen = false;
     private Ley ley;
     private Dictionary<string, bool> visibilityState = new Dictionary<string, bool>();
     private string searchTerm = "";
     private List<Titulo> filteredTitulos = new List<Titulo>();
     private Disposiciones filteredDisposiciones;
+    private List<FilterItem> filters = new List<FilterItem>();
+    
     private string elementoSeleccionado = null;
+    private void ToggleAccordion()
+{
+    isAccordionOpen = !isAccordionOpen;
+    StateHasChanged();
+}
+
+    private async Task UpdateFilterAndApply(FilterItem item, bool isChecked)
+    {
+        item.IsSelected = isChecked;
+        await InvokeAsync(StateHasChanged);
+        ApplyFilters();
+    }
 
      private async Task CopiarResumen()
     {
@@ -750,6 +855,8 @@ Articulos= new List<Articulo>
                         };
                     ley = JsonSerializer.Deserialize<Ley>(response, options);
                     InitializeVisibilityState();
+                    GenerateFilters(); // Añadir esta línea
+                    ApplyFilters(); // Añadir esta línea
                     StateHasChanged();
                 }
                 catch (Exception ex)
@@ -905,7 +1012,7 @@ Articulos= new List<Articulo>
 
         if (ley != null)
         {
-            foreach (var titulo in ley.Titulos)
+            foreach (var titulo in filteredTitulos)
             {
                 visibilityState[$"titulo-{titulo.NombreTitulo}"] = false;
                 foreach (var capitulo in titulo.Capitulos)
@@ -1133,6 +1240,103 @@ Articulos= new List<Articulo>
             resumen.AppendLine($"{articulo.ResumenArticulo}\n");
         }
     }
+
+
+
+    private void GenerateFilters()
+    {
+        filters.Clear();
+        if (ley != null)
+        {
+            foreach (var titulo in ley.Titulos)
+            {
+                var tituloFilter = new FilterItem { Id = $"titulo-{titulo.NombreTitulo}", Name = titulo.NombreTitulo };
+                foreach (var capitulo in titulo.Capitulos)
+                {
+                    var capituloFilter = new FilterItem { Id = $"capitulo-{capitulo.NombreCapitulo}", Name = capitulo.NombreCapitulo };
+                    foreach (var seccion in capitulo.Secciones)
+                    {
+                        capituloFilter.Children.Add(new FilterItem { Id = $"seccion-{seccion.NombreSeccion}", Name = seccion.NombreSeccion });
+                    }
+                    tituloFilter.Children.Add(capituloFilter);
+                }
+                filters.Add(tituloFilter);
+            }
+        }
+    }
+
+    private void ApplyFilters()
+    {
+        if (ley == null) return;
+
+        var selectedFilters = GetSelectedFilters(filters);
+
+        filteredTitulos = ley.Titulos.Select(t => new Titulo
+            {
+                NombreTitulo = t.NombreTitulo,
+                ResumenTitulo = t.ResumenTitulo,
+                Capitulos = t.Capitulos.Select(c => new Capitulo
+                {
+                    NombreCapitulo = c.NombreCapitulo,
+                    ResumenCapitulo = c.ResumenCapitulo,
+                    Secciones = c.Secciones.Select(s => new Seccion
+                    {
+                        NombreSeccion = s.NombreSeccion,
+                        ResumenSeccion = s.ResumenSeccion,
+                        Articulos = s.Articulos
+                    }).ToList(),
+                    Articulos = c.Articulos
+                }).ToList(),
+                Articulos = t.Articulos
+            }).ToList();
+
+        if (selectedFilters.Any())
+        {
+            filteredTitulos = filteredTitulos.Where(t =>
+                selectedFilters.Contains($"titulo-{t.NombreTitulo}") ||
+                t.Capitulos.Any(c =>
+                    selectedFilters.Contains($"capitulo-{c.NombreCapitulo}") ||
+                    c.Secciones.Any(s => selectedFilters.Contains($"seccion-{s.NombreSeccion}"))
+                )
+            ).ToList();
+
+            foreach (var titulo in filteredTitulos)
+            {
+                titulo.Capitulos = titulo.Capitulos.Where(c =>
+                    selectedFilters.Contains($"titulo-{titulo.NombreTitulo}") ||
+                    selectedFilters.Contains($"capitulo-{c.NombreCapitulo}") ||
+                    c.Secciones.Any(s => selectedFilters.Contains($"seccion-{s.NombreSeccion}"))
+                ).ToList();
+
+                foreach (var capitulo in titulo.Capitulos)
+                {
+                    capitulo.Secciones = capitulo.Secciones.Where(s =>
+                        selectedFilters.Contains($"titulo-{titulo.NombreTitulo}") ||
+                        selectedFilters.Contains($"capitulo-{capitulo.NombreCapitulo}") ||
+                        selectedFilters.Contains($"seccion-{s.NombreSeccion}")
+                    ).ToList();
+                }
+            }
+        }
+
+        StateHasChanged();
+    }
+
+    private List<string> GetSelectedFilters(List<FilterItem> items)
+    {
+        var selectedFilters = new List<string>();
+        foreach (var item in items)
+        {
+            if (item.IsSelected)
+            {
+                selectedFilters.Add(item.Id);
+            }
+            selectedFilters.AddRange(GetSelectedFilters(item.Children));
+        }
+        return selectedFilters;
+    }
+
+
 }
 
 <style>

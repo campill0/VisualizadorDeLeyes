@@ -34,5 +34,13 @@ namespace VisualizadorDeLeyes.Entidades
         /// <required>false</required>
         [JsonPropertyName("Articulos")]
         public List<Articulo> Articulos { get; set; } = new List<Articulo>();
+
+        public Capitulo ObtenerCapituloByNombreCapitulo(string textoCapitulo)
+        {
+            Capitulo capitulo= Capitulos.Where(x => x.NombreCapitulo == textoCapitulo).FirstOrDefault();
+            return capitulo;
+
+
+        }
     }
 }

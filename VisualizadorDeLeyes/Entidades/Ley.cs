@@ -42,7 +42,22 @@ namespace VisualizadorDeLeyes.Entidades
         /// <required>false</required>
         [JsonPropertyName("ResumenLey")]
         public string ResumenLey { get; set; }
+        public Titulo ObtenerTituloByTextoTitulo(string textoTitulo)
+        {
+            return Titulos.Where(x => x.NombreTitulo == textoTitulo).FirstOrDefault();
     }
 
+        public Capitulo ObtenerCapituloByNombreCapitulo(string nombreCapitulo)
+        {
+            Capitulo capitulo = null;
+            foreach (var titulo in Titulos) { 
+                capitulo = titulo.ObtenerCapituloByNombreCapitulo(nombreCapitulo);
+                if (capitulo != null) { break; }
+            }
+            return capitulo;
+        }
+    }
+
+   
 
 }

@@ -538,11 +538,11 @@
     },
     {
       "NombreTitulo": "TÍTULO III. De las Cortes Generales",
-      "ResumenTitulo": "Regula la composición, funciones y funcionamiento del poder legislativo.",
+      "ResumenTitulo": "**Cortes Generales:** Representan al pueblo español, formadas por Congreso y Senado.\n\n**Composición y funciones:** \n- **Congreso:** 300-400 diputados elegidos por sufragio universal.\n- **Senado:** Cámara de representación territorial.\n- Ejercen potestad legislativa, aprueban presupuestos y controlan al Gobierno.\n\n**Funcionamiento:** \n- **Sesiones:** Dos períodos ordinarios anuales.\n- **Toma de decisiones:** Por mayoría, con casos especiales.\n- **Comisiones:** Para investigación y legislación.\n\n**Elaboración de leyes:** \n- **Iniciativa legislativa:** Gobierno, Congreso, Senado, CCAA y iniciativa popular.\n- **Leyes orgánicas:** Requieren mayoría absoluta.\n- **Decretos-ley:** Para situaciones urgentes.\n\n**Tratados internacionales:** \n- Requieren autorización de las Cortes en casos específicos.\n- Forman parte del ordenamiento interno tras su publicación.\n\n**Referéndum:** Posible para decisiones políticas trascendentales.",
       "Capitulos": [
         {
           "NombreCapitulo": "CAPÍTULO PRIMERO. De las Cámaras",
-          "ResumenCapitulo": "Define la estructura y composición de las Cortes Generales.",
+          "ResumenCapitulo": "**Cortes Generales:** Representan al pueblo español y están formadas por el Congreso de los Diputados y el Senado.\n\n**Funciones:** Ejercen la potestad legislativa, aprueban presupuestos y controlan al Gobierno.\n\n**Composición:**\n- **Congreso:** 300-400 Diputados elegidos por sufragio universal.\n- **Senado:** Cámara de representación territorial con senadores elegidos por provincias y Comunidades Autónomas.\n\n**Mandato:** 4 años para ambas Cámaras.\n\n**Inelegibilidad e incompatibilidad:** Determinadas por ley para ciertos cargos.\n\n**Privilegios parlamentarios:**\n- **Inviolabilidad** por opiniones en ejercicio de funciones.\n- **Inmunidad** durante el mandato.\n\n**Funcionamiento:**\n- Sesiones ordinarias: septiembre-diciembre y febrero-junio.\n- Pueden reunirse en sesiones extraordinarias.\n- Funcionan en Pleno y por Comisiones.\n\n**Comisiones de investigación:** Pueden ser nombradas sobre asuntos de interés público.\n\n**Peticiones ciudadanas:** Recibidas por escrito.\n\n**Diputación Permanente:** Vela por los poderes de las Cámaras cuando no están reunidas.\n\n**Acuerdos:** Requieren mayoría de miembros presentes, con excepciones.\n\n**Sesiones:** Generalmente públicas, salvo acuerdo en contrario.",
           "Articulos": [
             {
               "NumeroArticulo": 66,
@@ -656,7 +656,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO SEGUNDO. De la elaboración de las leyes",
-          "ResumenCapitulo": "Describe el proceso de elaboración y aprobación de las leyes.",
+          "ResumenCapitulo": "**Leyes Orgánicas**: \n- Desarrollan derechos fundamentales, estatutos de autonomía y régimen electoral.\n- Requieren mayoría absoluta del Congreso para aprobación.\n\n**Delegación Legislativa**: \n- Las Cortes pueden delegar al Gobierno la potestad de dictar normas con rango de ley.\n- Se otorga mediante ley de bases o ley ordinaria, con plazo y materia específicos.\n\n**Decretos Legislativos**: \n- Disposiciones del Gobierno con legislación delegada.\n\n**Decretos-leyes**: \n- Para casos de urgente necesidad.\n- No pueden afectar derechos fundamentales ni régimen de Comunidades Autónomas.\n- Requieren convalidación del Congreso en 30 días.\n\n**Iniciativa Legislativa**: \n- Corresponde al Gobierno, Congreso, Senado y Asambleas de Comunidades Autónomas.\n- **Iniciativa Popular**: Requiere 500.000 firmas.\n\n**Proceso Legislativo**: \n- Proyectos de ley aprobados por Consejo de Ministros.\n- El Senado puede vetar o enmendar en 2 meses (20 días si es urgente).\n- El Rey sanciona y promulga las leyes en 15 días.\n\n**Referéndum**: \n- Para decisiones políticas trascendentales.\n- Convocado por el Rey a propuesta del Presidente del Gobierno, con autorización del Congreso.",
           "Articulos": [
             {
               "NumeroArticulo": 81,
@@ -746,7 +746,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO TERCERO. De los Tratados Internacionales",
-          "ResumenCapitulo": "Regula la celebración y efectos de los tratados internacionales.",
+          "ResumenCapitulo": "**Tratados Internacionales**:\n\n**Autorización**:\n- Mediante ley orgánica se puede autorizar tratados que atribuyan competencias constitucionales a organizaciones internacionales.\n- Las Cortes Generales o el Gobierno garantizan su cumplimiento.\n\n**Consentimiento del Estado**:\nSe requiere autorización previa de las Cortes Generales para tratados:\n- De carácter **político** o **militar**\n- Que afecten la **integridad territorial** o **derechos fundamentales**\n- Con **obligaciones financieras** para la Hacienda Pública\n- Que modifiquen leyes o requieran medidas legislativas\n\n**Información**:\n- El Congreso y Senado serán informados de otros tratados.\n\n**Compatibilidad constitucional**:\n- Tratados contrarios a la Constitución exigen revisión previa.\n- El Gobierno o las Cámaras pueden consultar al Tribunal Constitucional.\n\n**Validez y derogación**:\n- Tratados válidos y publicados forman parte del ordenamiento interno.\n- Solo pueden ser **derogados** o **modificados** según lo previsto en ellos o normas internacionales.\n\n**Denuncia**:\n- Se sigue el mismo procedimiento que para su aprobación.",
           "Articulos": [
             {
               "NumeroArticulo": 93,
@@ -782,7 +782,7 @@
     },
     {
       "NombreTitulo": "TÍTULO IV. Del Gobierno y de la Administración",
-      "ResumenTitulo": "Define la estructura y funciones del Gobierno y la Administración Pública.",
+      "ResumenTitulo": "**Gobierno y Administración**:\n\n**Funciones del Gobierno**: Dirige política interior y exterior, administración civil y militar, y defensa del Estado.\n\n**Composición del Gobierno**: Presidente, Vicepresidentes, Ministros y otros miembros.\n\n**Presidente**: Dirige acción del Gobierno y coordina funciones.\n\n**Incompatibilidades**: Miembros no pueden ejercer otras funciones representativas o actividades profesionales.\n\n**Nombramiento del Presidente**: \n- Rey propone candidato tras consultas.\n- Candidato expone programa y solicita confianza del Congreso.\n- Nombramiento si obtiene mayoría absoluta o simple en segunda votación.\n- Si no hay confianza en 2 meses, se convocan nuevas elecciones.\n\n**Otros miembros**: Nombrados y separados por el Rey a propuesta del Presidente.\n\n**Cese del Gobierno**: Tras elecciones, pérdida de confianza, dimisión o fallecimiento del Presidente.\n\n**Responsabilidad criminal**: Exigible ante Sala Penal del Tribunal Supremo.\n\n**Administración Pública**: \n- Sirve intereses generales con objetividad.\n- Principios: eficacia, jerarquía, descentralización, coordinación.\n- Sometida a ley y Derecho.\n\n**Funcionarios públicos**: Acceso por mérito y capacidad.\n\n**Fuerzas y Cuerpos de seguridad**: Protegen derechos y garantizan seguridad ciudadana.\n\n**Derechos ciudadanos**: \n- Audiencia en elaboración de disposiciones administrativas.\n- Acceso a archivos y registros administrativos.\n- Garantía de audiencia en procedimientos.\n\n**Control judicial**: Tribunales controlan legalidad de actuación administrativa.\n\n**Indemnización**: Por lesiones debido a funcionamiento de servicios públicos.\n\n**Consejo de Estado**: Supremo órgano consultivo del Gobierno.",
       "Articulos": [
         {
           "NumeroArticulo": 97,
@@ -871,7 +871,7 @@
     },
     {
       "NombreTitulo": "TÍTULO V. De las relaciones entre el Gobierno y las Cortes Generales",
-      "ResumenTitulo": "Regula las relaciones entre el poder ejecutivo y el legislativo.",
+      "ResumenTitulo": "**Relaciones Gobierno-Cortes Generales**:\n\n**Responsabilidad del Gobierno**: Responde solidariamente ante el Congreso de los Diputados.\n\n**Información y presencia**: \n- Las Cámaras pueden solicitar información al Gobierno y autoridades.\n- Pueden reclamar la presencia de miembros del Gobierno.\n- Los miembros del Gobierno tienen acceso a las sesiones.\n\n**Interpelaciones y preguntas**: \n- El Gobierno está sometido a interpelaciones y preguntas en las Cámaras.\n- Las interpelaciones pueden dar lugar a mociones.\n\n**Cuestión de confianza**: \n- El Presidente puede plantearla ante el Congreso.\n- Se aprueba por mayoría simple.\n\n**Moción de censura**: \n- Exige responsabilidad política del Gobierno.\n- Requiere mayoría absoluta y proponer un candidato alternativo.\n- Plazos y restricciones específicos.\n\n**Disolución de las Cámaras**: \n- El Presidente puede proponerla, con restricciones.\n\n**Estados excepcionales**: \n- **Alarma**: Declarado por el Gobierno, máximo 15 días.\n- **Excepción**: Declarado por el Gobierno con autorización del Congreso, máximo 30 días.\n- **Sitio**: Declarado por mayoría absoluta del Congreso a propuesta del Gobierno.\n- No se puede disolver el Congreso durante estos estados.\n- No modifican la responsabilidad del Gobierno.",
       "Articulos": [
         {
           "NumeroArticulo": 108,
@@ -943,7 +943,7 @@
     },
     {
       "NombreTitulo": "TÍTULO VI. Del Poder Judicial",
-      "ResumenTitulo": "Define la organización y funciones del Poder Judicial.",
+      "ResumenTitulo": "**Origen y administración de la justicia**: Emana del pueblo, administrada por jueces y magistrados independientes.\n\n**Inamovilidad judicial**: Jueces y magistrados no pueden ser separados, suspendidos o trasladados sin causa legal.\n\n**Potestad jurisdiccional**: Exclusiva de juzgados y tribunales determinados por ley.\n\n**Principio de unidad jurisdiccional**: Base de la organización de tribunales, con regulación especial para jurisdicción militar.\n\n**Prohibición**: Se prohíben tribunales de excepción.\n\n**Obligatoriedad**: Cumplimiento obligatorio de sentencias y colaboración con la justicia.\n\n**Gratuidad**: Justicia gratuita en casos determinados por ley o insuficiencia de recursos.\n\n**Publicidad**: Actuaciones judiciales públicas, con excepciones legales.\n\n**Oralidad**: Procedimiento predominantemente oral, especialmente en materia criminal.\n\n**Motivación**: Sentencias siempre motivadas y pronunciadas en audiencia pública.\n\n**Indemnización**: Derecho a indemnización por error judicial o funcionamiento anormal.\n\n**Regulación**: Ley orgánica del poder judicial determina funcionamiento de juzgados y tribunales.\n\n**Consejo General del Poder Judicial**: Órgano de gobierno judicial, integrado por 20 miembros nombrados por el Rey.\n\n**Tribunal Supremo**: Órgano jurisdiccional superior en España, salvo en garantías constitucionales.\n\n**Ministerio Fiscal**: Promueve la acción de justicia en defensa de la legalidad y derechos ciudadanos.\n\n**Participación ciudadana**: Acción popular y jurado en procesos penales determinados por ley.\n\n**Policía judicial**: Depende de jueces, tribunales y Ministerio Fiscal en funciones de investigación.\n\n**Incompatibilidades**: Jueces, magistrados y fiscales no pueden desempeñar otros cargos públicos ni pertenecer a partidos o sindicatos.",
       "Articulos": [
         {
           "NumeroArticulo": 117,
@@ -1029,7 +1029,7 @@
     },
     {
       "NombreTitulo": "TÍTULO VII. Economía y Hacienda",
-      "ResumenTitulo": "Regula los principios básicos del sistema económico y financiero del Estado.",
+      "ResumenTitulo": "**Economía y Hacienda**:\n\n**Riqueza nacional**: Subordinada al interés general.\n\n**Iniciativa pública**: Reconocida en la actividad económica. El Estado puede reservar recursos o servicios esenciales.\n\n**Participación ciudadana**: Ley establece formas de participación en Seguridad Social y organismos públicos relevantes.\n\n**Fomento empresarial**: Poderes públicos promueven participación en empresas y cooperativas.\n\n**Desarrollo económico**: Enfoque en modernización de sectores, especialmente agricultura, ganadería, pesca y artesanía.\n\n**Planificación económica**: El Estado puede planificar para atender necesidades colectivas y equilibrar desarrollo.\n\n**Bienes públicos**: Ley regula régimen de bienes de dominio público y comunales.\n\n**Sistema tributario**: Estado tiene potestad originaria. Comunidades Autónomas y Corporaciones locales pueden establecer tributos según la ley.\n\n**Presupuestos Generales**: Elaborados por el Gobierno, aprobados por las Cortes. Carácter anual y prorrogables.\n\n**Estabilidad presupuestaria**: Administraciones deben adecuarse a este principio. Límites de déficit y deuda pública establecidos.\n\n**Tribunal de Cuentas**: Órgano supremo de fiscalización económica del Estado y sector público.",
       "Articulos": [
         {
           "NumeroArticulo": 128,
@@ -1101,11 +1101,11 @@
     },
     {
       "NombreTitulo": "TÍTULO VIII. De la Organización Territorial del Estado",
-      "ResumenTitulo": "Define la estructura territorial del Estado y las competencias de las diferentes administraciones.",
+      "ResumenTitulo": "**Organización Territorial del Estado**:\n\n**Principios generales**:\n- El Estado se organiza en municipios, provincias y Comunidades Autónomas, con autonomía para gestionar sus intereses.\n- Se garantiza la **solidaridad** y el **equilibrio económico** entre territorios.\n- Todos los españoles tienen los **mismos derechos y obligaciones** en cualquier parte del Estado.\n\n**Administración Local**:\n- Se garantiza la **autonomía de los municipios**, gobernados por Ayuntamientos.\n- La **provincia** es una entidad local con personalidad jurídica propia.\n- Las **Haciendas locales** se nutren de tributos propios y participación en los del Estado y CC.AA.\n\n**Comunidades Autónomas**:\n- Pueden constituirse por provincias limítrofes con características comunes.\n- El **proceso autonómico** se inicia por las Diputaciones y municipios interesados.\n- Los **Estatutos de Autonomía** son la norma básica de cada Comunidad.\n- Las CC.AA. pueden asumir competencias en materias como:\n  • Organización institucional\n  • Ordenación del territorio\n  • Obras públicas\n  • Agricultura y ganadería\n  • Sanidad e higiene\n\n**Competencias del Estado**:\n- El Estado tiene competencia exclusiva en materias como:\n  • Relaciones internacionales\n  • Defensa y Fuerzas Armadas\n  • Legislación mercantil, penal y laboral\n  • Sistema monetario\n  • Hacienda general\n\n**Control y financiación**:\n- Las actividades de las CC.AA. son controladas por diversos organismos.\n- Las CC.AA. gozan de **autonomía financiera** con principios de coordinación y solidaridad.\n- Sus recursos incluyen impuestos cedidos, propios y transferencias del Estado.\n\nEste título establece el marco para la descentralización del poder en España, definiendo la estructura territorial y el reparto de competencias entre el Estado central y las entidades autonómicas y locales.",
       "Capitulos": [
         {
           "NombreCapitulo": "CAPÍTULO PRIMERO. Principios generales",
-          "ResumenCapitulo": "Establece los principios básicos de la organización territorial del Estado.",
+          "ResumenCapitulo": "**Principios generales**: Este capítulo establece las bases de la organización territorial del Estado español.\n\n**Organización territorial**: El Estado se divide en municipios, provincias y Comunidades Autónomas, todas con autonomía para gestionar sus intereses.\n\n**Solidaridad y equilibrio**: El Estado garantiza:\n- La solidaridad entre territorios\n- Un **equilibrio económico justo** en todo el país\n- Atención especial a las **circunstancias insulares**\n\n**Igualdad entre Comunidades**: Los Estatutos de las Comunidades Autónomas no pueden implicar **privilegios económicos o sociales**.\n\n**Derechos de los españoles**:\n- **Igualdad** de derechos y obligaciones en todo el territorio\n- **Libertad de circulación y establecimiento** de personas\n- **Libre circulación de bienes** en todo el país\n\nSe prohíbe cualquier medida que obstaculice estas libertades.",
           "Articulos": [
             {
               "NumeroArticulo": 137,
@@ -1135,7 +1135,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO SEGUNDO. De la Administración Local",
-          "ResumenCapitulo": "Regula la administración local y sus competencias.",
+          "ResumenCapitulo": "**Autonomía municipal**: La Constitución garantiza la autonomía de los municipios, que tienen personalidad jurídica plena.\n\n**Gobierno municipal**: Corresponde a los Ayuntamientos, formados por Alcaldes y Concejales.\n\n**Elección de cargos**: Concejales elegidos por sufragio universal, Alcaldes por Concejales o vecinos.\n\n**Provincia**: Entidad local con personalidad jurídica propia, agrupa municipios.\n\n**Gobierno provincial**: A cargo de Diputaciones u otras Corporaciones representativas.\n\n**Otras entidades**: Posibilidad de crear agrupaciones de municipios diferentes a provincias. En archipiélagos, las islas tienen administración propia (Cabildos o Consejos).\n\n**Haciendas locales**: Deben tener medios suficientes para sus funciones, nutriéndose de **tributos propios** y participación en los del Estado y Comunidades Autónomas.",
           "Articulos": [
             {
               "NumeroArticulo": 140,
@@ -1165,7 +1165,7 @@
         },
         {
           "NombreCapitulo": "CAPÍTULO TERCERO. De las Comunidades Autónomas",
-          "ResumenCapitulo": "Establece el marco para la creación y funcionamiento de las Comunidades Autónomas.",
+          "ResumenCapitulo": "**Comunidades Autónomas**: Entidades territoriales con derecho a autogobierno.\n\n**Constitución**: Provincias limítrofes o territorios insulares pueden formar Comunidades Autónomas.\n\n**Iniciativa autonómica**: Corresponde a Diputaciones y municipios, con requisitos específicos.\n\n**Estatutos de Autonomía**: Norma básica de cada Comunidad, debe incluir:\n- Denominación\n- Delimitación territorial\n- Instituciones autónomas\n- Competencias asumidas\n\n**Competencias de las Comunidades Autónomas**: Incluyen:\n- Organización institucional\n- Ordenación del territorio\n- Obras públicas de interés regional\n- Agricultura y ganadería\n- Gestión ambiental\n- Cultura y turismo\n\n**Competencias exclusivas del Estado**: Incluyen:\n- Relaciones internacionales\n- Defensa\n- Justicia\n- Legislación mercantil y laboral\n- Sistema monetario\n- Seguridad pública\n\n**Organización institucional**: Basada en:\n- Asamblea Legislativa\n- Consejo de Gobierno\n- Presidente\n- Tribunal Superior de Justicia\n\n**Control**: Ejercido por:\n- Tribunal Constitucional\n- Gobierno\n- Jurisdicción contencioso-administrativa\n- Tribunal de Cuentas\n\n**Autonomía financiera**: Las Comunidades gozarán de autonomía financiera para sus competencias.\n\n**Recursos**: Incluyen impuestos cedidos, propios impuestos, transferencias y otros.\n\n**Fondo de Compensación**: Para corregir desequilibrios económicos entre territorios.",
           "Articulos": [
             {
               "NumeroArticulo": 143,
@@ -1288,7 +1288,7 @@
     },
     {
       "NombreTitulo": "TÍTULO IX. Del Tribunal Constitucional",
-      "ResumenTitulo": "Define la composición, funciones y competencias del Tribunal Constitucional.",
+      "ResumenTitulo": "**Tribunal Constitucional**: Composición y funcionamiento\n\n**Composición**:\n- 12 miembros nombrados por el Rey\n- **Propuestas de nombramiento**: 4 por el Congreso, 4 por el Senado, 2 por el Gobierno, 2 por el Consejo General del Poder Judicial\n- **Requisitos**: Juristas de reconocida competencia con más de 15 años de ejercicio profesional\n- **Período de designación**: 9 años, renovación por tercios cada 3 años\n\n**Incompatibilidades**:\n- Mandatos representativos\n- Cargos políticos o administrativos\n- Funciones directivas en partidos o sindicatos\n- Carreras judicial y fiscal\n- Actividades profesionales o mercantiles\n\n**Características del cargo**:\n- Independencia e inamovilidad\n\n**Presidencia**:\n- Nombrado por el Rey entre sus miembros\n- Propuesto por el Tribunal en pleno\n- Período de 3 años\n\n**Jurisdicción y competencias**:\n- **Ámbito**: Todo el territorio español\n- **Funciones principales**:\n  1. Recurso de inconstitucionalidad\n  2. Recurso de amparo\n  3. Conflictos de competencia entre Estado y Comunidades Autónomas\n  4. Otras atribuciones constitucionales o legales\n\n**Legitimación para recursos**:\n- **Inconstitucionalidad**: Presidente del Gobierno, Defensor del Pueblo, 50 Diputados, 50 Senadores, órganos ejecutivos y Asambleas de Comunidades Autónomas\n- **Amparo**: Personas naturales o jurídicas, Defensor del Pueblo, Ministerio Fiscal\n\n**Cuestión de inconstitucionalidad**:\n- Planteada por órganos judiciales ante normas con rango de ley\n\n**Sentencias**:\n- Publicadas en el BOE con votos particulares\n- Valor de cosa juzgada sin posibilidad de recurso\n- Efectos generales en declaraciones de inconstitucionalidad\n\n**Regulación**:\n- Ley orgánica para funcionamiento, estatuto de miembros y procedimientos",
       "Articulos": [
         {
           "NumeroArticulo": 159,
@@ -1346,7 +1346,7 @@
     },
     {
       "NombreTitulo": "TÍTULO X. De la reforma constitucional",
-      "ResumenTitulo": "Establece los procedimientos para la reforma de la Constitución.",
+      "ResumenTitulo": "**Reforma constitucional**: Proceso regulado para modificar la Constitución española.\n\n**Iniciativa**: Se ejerce según lo previsto en el artículo 87, apartados 1 y 2.\n\n**Procedimiento general**:\n- Aprobación: Requiere mayoría de 3/5 en ambas Cámaras.\n- En caso de desacuerdo: Se crea una Comisión paritaria para presentar un nuevo texto.\n- Si persiste el desacuerdo: El Congreso puede aprobar con 2/3 si el Senado dio mayoría absoluta.\n- Referéndum: Opcional, si lo solicita 1/10 de miembros de cualquier Cámara.\n\n**Reforma agravada** (para revisión total o afectando partes fundamentales):\n1. Aprobación del principio: 2/3 en cada Cámara.\n2. Disolución inmediata de las Cortes.\n3. Nuevas Cámaras ratifican y aprueban nuevo texto (2/3 en ambas).\n4. Referéndum obligatorio.\n\n**Restricción**: No se puede iniciar reforma durante **guerra** o **estados de excepción**.\n\n**Aspectos clave**:\n- Diferentes niveles de exigencia según la importancia de la reforma.\n- Participación de ambas Cámaras y posible intervención ciudadana.\n- Mecanismos para resolver desacuerdos entre Cámaras.\n- Protección especial de partes fundamentales de la Constitución.",
       "Articulos": [
         {
           "NumeroArticulo": 166,

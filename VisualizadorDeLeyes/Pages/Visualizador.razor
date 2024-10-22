@@ -219,7 +219,7 @@
 </style>
 <h1>Visor de Leyes</h1>
 
-<div>
+<div class="version202409171245">
     <h3>Seleccionar ley preexistente:</h3>
     <select @onchange="CargarLeyPreexistente">
         <option value="">Seleccione una ley</option>
@@ -654,13 +654,13 @@ else
     private List<Titulo> filteredTitulos = new List<Titulo>();
     private Disposiciones filteredDisposiciones;
     private List<FilterItem> filters = new List<FilterItem>();
-    
+
     private string elementoSeleccionado = null;
     private void ToggleAccordion()
-{
-    isAccordionOpen = !isAccordionOpen;
-    StateHasChanged();
-}
+    {
+        isAccordionOpen = !isAccordionOpen;
+        StateHasChanged();
+    }
 
     private async Task UpdateFilterAndApply(FilterItem item, bool isChecked)
     {
@@ -669,7 +669,7 @@ else
         ApplyFilters();
     }
 
-     private async Task CopiarResumen()
+    private async Task CopiarResumen()
     {
         string textoPlano = System.Text.RegularExpressions.Regex.Replace(resumenLey, "<.*?>", String.Empty);
         await JSRuntime.InvokeVoidAsync("copiarAlPortapapeles", textoPlano);
@@ -769,11 +769,11 @@ Articulos= new List<Articulo>
                                }
                                     }
                                 }
-                            
+
                             }
                             }
                         }
-                    
+
                     }
                 },
                 Disposiciones = new Disposiciones
@@ -810,14 +810,14 @@ Articulos= new List<Articulo>
                     },
                     DisposicionesFinales = new List<Disposicion>
                     {
-                    
+
                         new Disposicion
                     {
                         NombreDisposicion = "",
                         ResumenDisposicion = "",
                         TextoCompletoDisposicion = ""
                     }
-                    
+
                     }
                 }
             };
@@ -1087,7 +1087,7 @@ Articulos= new List<Articulo>
 
 
 
-     private bool mostrarResumen = false;
+    private bool mostrarResumen = false;
     private string resumenLey = "";
 
     private void MostrarResumenLey()
@@ -1161,14 +1161,21 @@ Articulos= new List<Articulo>
         else if (elementoSeleccionado.StartsWith("titulo-"))
         {
             // Código existente para el resumen del título
+            Titulo titulo = ley.ObtenerTituloByTextoTitulo(elementoSeleccionado.Substring("titulo-".Length));
+            GenerarResumenTitulo(resumen, titulo);
         }
         else if (elementoSeleccionado.StartsWith("capitulo-"))
         {
+            Capitulo capitulo = ley.ObtenerCapituloByNombreCapitulo(elementoSeleccionado.Substring("capitulo-".Length));
+            GenerarResumenCapitulo(resumen, capitulo);
             // Código existente para el resumen del capítulo
         }
         // Mantener el resto del código existente para otros casos
-
-        return RenderMarkdown(resumen.ToString());
+        // Antes de retornar, reemplazar dos saltos de línea por uno solo
+        string resumenFinal = resumen.ToString().Replace("\n\n", "\n");
+        resumenFinal = resumenFinal.ToString().Replace("\n\n", "\n");
+        resumenFinal = resumenFinal.ToString().Replace("\n\n", "\n");
+        return RenderMarkdown(resumenFinal.ToString());
     }
 
     private void AgregarResumenDisposicion(System.Text.StringBuilder resumen, Disposicion disposicion)

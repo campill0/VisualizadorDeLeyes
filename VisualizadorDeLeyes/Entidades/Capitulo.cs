@@ -35,5 +35,7 @@ namespace VisualizadorDeLeyes.Entidades
         /// <required>true</required>
         [JsonPropertyName("Articulos")]
         public List<Articulo> Articulos { get; set; } = new List<Articulo>();
+
+        
     }
 }

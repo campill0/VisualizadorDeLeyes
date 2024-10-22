@@ -1,5 +1,6 @@
 ﻿@page "/visualizador"
 @using System.Text.Json;
+@using System.Text
 @using VisualizadorDeLeyes.Entidades
 @using System.IO;
 @using Markdig;
@@ -274,9 +275,15 @@
 
 @if (ley != null)
 {
-    <button @onclick="MostrarResumenLey" class="btn btn-primary mt-3">Mostrar Resumen de la Ley</button>
+    <button @onclick="MostrarResumenLey" class="btn btn-primary mt-3 mr-1">Mostrar Resumen de la Ley</button>
+    <button @onclick="MostrarLeyCompleta" class="btn btn-primary mt-3 mr-1">Mostrar ley completa</button>
+    <button @onclick="ReiniciarEstado" class="btn btn-primary mt-3">Reiniciar Aplicación</button>
+    <button @onclick="ToggleResumenCaja" class="btn  @(mostrarResumenCaja ? "btn-secondary" : "btn-primary") mt-3">
+        @(mostrarResumenCaja ? "Ocultar Resumen" : "Mostrar Resumen")
+    </button>
+
 }
-@if (mostrarResumen)
+@if (mostrarResumen &&   mostrarResumenCaja)
 {
     <div class="resumen-ley">
         <button @onclick="CopiarResumen" class="btn btn-primary mt-2">Copiar Resumen</button>
@@ -284,6 +291,14 @@
         <h2>Resumen de la Ley: @ley.NombreLey</h2>
         @((MarkupString)resumenLey)
        
+    </div>
+}
+
+@if (mostrarLeyCompleta && mostrarResumenCaja)
+{
+    <div class="contenido-ley">
+        <h2>Contenido Completo de la Ley: @ley.NombreLey</h2>
+        <div>@((MarkupString)RenderMarkdown(contenidoLeyCompleta))</div>
     </div>
 }
 
@@ -647,6 +662,8 @@ else
     }
 </script>
 @code {
+    private bool mostrarResumenCaja = true;
+
     private bool isAccordionOpen = false;
     private Ley ley;
     private Dictionary<string, bool> visibilityState = new Dictionary<string, bool>();
@@ -656,6 +673,212 @@ else
     private List<FilterItem> filters = new List<FilterItem>();
 
     private string elementoSeleccionado = null;
+
+     private bool mostrarLeyCompleta = false;
+    private string contenidoLeyCompleta = "";
+
+    private void MostrarLeyCompleta()
+    {
+        mostrarLeyCompleta = true;
+        contenidoLeyCompleta = GenerarContenidoLeySinResumen();
+        StateHasChanged();
+    }
+
+    private string GenerarContenidoLeySinResumen()
+    {
+        var contenido = new System.Text.StringBuilder();
+
+        if (string.IsNullOrEmpty(elementoSeleccionado))
+        {
+            // Generar el contenido completo de la ley
+            contenido.AppendLine($"# {ley.NombreLey}\n");
+
+            if (ley.Preambulo != null && !string.IsNullOrEmpty(ley.Preambulo.TextoCompletoPreambulo))
+            {
+                contenido.AppendLine("## Preámbulo\n");
+                contenido.AppendLine($"{ley.Preambulo.TextoCompletoPreambulo}\n");
+            }
+
+            foreach (var titulo in ley.Titulos)
+            {
+                GenerarContenidoTitulo(contenido, titulo);
+            }
+
+            if (ley.Disposiciones != null)
+            {
+                GenerarContenidoDisposiciones(contenido, ley.Disposiciones);
+            }
+        }
+        else if (elementoSeleccionado.StartsWith("titulo-"))
+        {
+            Titulo titulo = ley.ObtenerTituloByTextoTitulo(elementoSeleccionado.Substring("titulo-".Length));
+            GenerarContenidoTitulo(contenido, titulo);
+        }
+        else if (elementoSeleccionado.StartsWith("capitulo-"))
+        {
+            Capitulo capitulo = ley.ObtenerCapituloByNombreCapitulo(elementoSeleccionado.Substring("capitulo-".Length));
+            GenerarContenidoCapitulo(contenido, capitulo);
+        }
+        else if (elementoSeleccionado.StartsWith("seccion-"))
+        {
+            Seccion seccion = ley.ObtenerSeccionByNombreSeccion(elementoSeleccionado.Substring("seccion-".Length));
+            GenerarContenidoSeccion(contenido, seccion);
+        }
+        else if (elementoSeleccionado.StartsWith("articulo-"))
+        {
+            int numeroArticulo = int.Parse(elementoSeleccionado.Substring("articulo-".Length));
+            Articulo articulo = ley.ObtenerArticuloByNumero(numeroArticulo);
+            GenerarContenidoArticulo(contenido, articulo);
+        }
+        else if (elementoSeleccionado == "disposiciones")
+        {
+            GenerarContenidoDisposiciones(contenido, ley.Disposiciones);
+        }
+        else if (elementoSeleccionado == "disposicionesAdicionales")
+        {
+            GenerarContenidoDisposicionesAdicionales(contenido, ley.Disposiciones.DisposicionesAdicionales);
+        }
+        else if (elementoSeleccionado == "disposicionesTransitorias")
+        {
+            GenerarContenidoDisposicionesTransitorias(contenido, ley.Disposiciones.DisposicionesTransitorias);
+        }
+        else if (elementoSeleccionado == "disposicionesDerogatorias")
+        {
+            GenerarContenidoDisposicionesDerogatorias(contenido, ley.Disposiciones.DisposicionesDerogatorias);
+        }
+        else if (elementoSeleccionado == "disposicionesFinales")
+        {
+            GenerarContenidoDisposicionesFinales(contenido, ley.Disposiciones.DisposicionesFinales);
+        }
+
+        // Reemplazar múltiples saltos de línea por uno solo
+        string contenidoFinal = contenido.ToString().Replace("\n\n", "\n");
+        contenidoFinal = contenidoFinal.ToString().Replace("\n\n", "\n");
+        contenidoFinal = contenidoFinal.ToString().Replace("\n\n", "\n");
+        return contenidoFinal;
+    }
+
+    // Métodos auxiliares para generar el contenido
+
+    private void GenerarContenidoTitulo(StringBuilder contenido, Titulo titulo)
+    {
+        contenido.AppendLine($"## {titulo.NombreTitulo}\n");
+
+        foreach (var articulo in titulo.Articulos)
+        {
+            GenerarContenidoArticulo(contenido, articulo);
+        }
+
+        foreach (var capitulo in titulo.Capitulos)
+        {
+            GenerarContenidoCapitulo(contenido, capitulo);
+        }
+    }
+
+    private void GenerarContenidoCapitulo(StringBuilder contenido, Capitulo capitulo)
+    {
+        contenido.AppendLine($"### {capitulo.NombreCapitulo}\n");
+
+        foreach (var articulo in capitulo.Articulos)
+        {
+            GenerarContenidoArticulo(contenido, articulo);
+        }
+
+        foreach (var seccion in capitulo.Secciones)
+        {
+            GenerarContenidoSeccion(contenido, seccion);
+        }
+    }
+
+    private void GenerarContenidoSeccion(StringBuilder contenido, Seccion seccion)
+    {
+        contenido.AppendLine($"#### {seccion.NombreSeccion}\n");
+
+        foreach (var articulo in seccion.Articulos)
+        {
+            GenerarContenidoArticulo(contenido, articulo);
+        }
+    }
+
+    private void GenerarContenidoArticulo(StringBuilder contenido, Articulo articulo)
+    {
+        //contenido.AppendLine($"##### Artículo {articulo.NumeroArticulo}: {articulo.NombreArticulo}\n");
+        contenido.AppendLine($" \n");
+        contenido.AppendLine($"{articulo.TextoCompletoArticulo}\n");
+        contenido.AppendLine($" \n");
+    }
+
+    private void GenerarContenidoDisposiciones(StringBuilder contenido, Disposiciones disposiciones)
+    {
+        contenido.AppendLine("## Disposiciones\n");
+
+        if (disposiciones.DisposicionesAdicionales?.Any() == true)
+        {
+            GenerarContenidoDisposicionesAdicionales(contenido, disposiciones.DisposicionesAdicionales);
+        }
+
+        if (disposiciones.DisposicionesTransitorias?.Any() == true)
+        {
+            GenerarContenidoDisposicionesTransitorias(contenido, disposiciones.DisposicionesTransitorias);
+        }
+
+        if (disposiciones.DisposicionesDerogatorias?.Any() == true)
+        {
+            GenerarContenidoDisposicionesDerogatorias(contenido, disposiciones.DisposicionesDerogatorias);
+        }
+
+        if (disposiciones.DisposicionesFinales?.Any() == true)
+        {
+            GenerarContenidoDisposicionesFinales(contenido, disposiciones.DisposicionesFinales);
+        }
+    }
+
+    private void GenerarContenidoDisposicionesAdicionales(StringBuilder contenido, List<Disposicion> disposiciones)
+    {
+        contenido.AppendLine("### Disposiciones Adicionales\n");
+
+        foreach (var disposicion in disposiciones)
+        {
+            GenerarContenidoDisposicion(contenido, disposicion);
+        }
+    }
+
+    private void GenerarContenidoDisposicionesTransitorias(StringBuilder contenido, List<Disposicion> disposiciones)
+    {
+        contenido.AppendLine("### Disposiciones Transitorias\n");
+
+        foreach (var disposicion in disposiciones)
+        {
+            GenerarContenidoDisposicion(contenido, disposicion);
+        }
+    }
+
+    private void GenerarContenidoDisposicionesDerogatorias(StringBuilder contenido, List<Disposicion> disposiciones)
+    {
+        contenido.AppendLine("### Disposiciones Derogatorias\n");
+
+        foreach (var disposicion in disposiciones)
+        {
+            GenerarContenidoDisposicion(contenido, disposicion);
+        }
+    }
+
+    private void GenerarContenidoDisposicionesFinales(StringBuilder contenido, List<Disposicion> disposiciones)
+    {
+        contenido.AppendLine("### Disposiciones Finales\n");
+
+        foreach (var disposicion in disposiciones)
+        {
+            GenerarContenidoDisposicion(contenido, disposicion);
+        }
+    }
+
+    private void GenerarContenidoDisposicion(StringBuilder contenido, Disposicion disposicion)
+    {
+        contenido.AppendLine($"#### {disposicion.NombreDisposicion}\n");
+        contenido.AppendLine($"{disposicion.TextoCompletoDisposicion}\n");
+    }
+
     private void ToggleAccordion()
     {
         isAccordionOpen = !isAccordionOpen;
@@ -1341,6 +1564,28 @@ Articulos= new List<Articulo>
             selectedFilters.AddRange(GetSelectedFilters(item.Children));
         }
         return selectedFilters;
+    }
+
+    private void ReiniciarEstado()
+    {
+        ley = null;
+        mostrarResumen = false;
+        mostrarLeyCompleta = false;
+        searchTerm = "";
+        filteredTitulos = new List<Titulo>();
+        filteredDisposiciones = new Disposiciones();
+        visibilityState.Clear();
+        elementoSeleccionado = null;
+        filters.Clear();
+        isAccordionOpen = false;
+        // Si tienes más variables de estado, reinícialas aquí
+
+        StateHasChanged();
+    }
+
+    private void ToggleResumenCaja()
+    {
+        mostrarResumenCaja = !mostrarResumenCaja;
     }
 
 

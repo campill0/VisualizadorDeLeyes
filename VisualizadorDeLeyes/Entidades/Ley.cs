@@ -42,19 +42,63 @@ namespace VisualizadorDeLeyes.Entidades
         /// <required>false</required>
         [JsonPropertyName("ResumenLey")]
         public string ResumenLey { get; set; }
+       
+
+      
+
         public Titulo ObtenerTituloByTextoTitulo(string textoTitulo)
         {
-            return Titulos.Where(x => x.NombreTitulo == textoTitulo).FirstOrDefault();
-    }
+            return Titulos.FirstOrDefault(t => t.NombreTitulo == textoTitulo);
+        }
 
         public Capitulo ObtenerCapituloByNombreCapitulo(string nombreCapitulo)
         {
-            Capitulo capitulo = null;
-            foreach (var titulo in Titulos) { 
-                capitulo = titulo.ObtenerCapituloByNombreCapitulo(nombreCapitulo);
-                if (capitulo != null) { break; }
+            foreach (var titulo in Titulos)
+            {
+                var capitulo = titulo.Capitulos.FirstOrDefault(c => c.NombreCapitulo == nombreCapitulo);
+                if (capitulo != null)
+                    return capitulo;
             }
-            return capitulo;
+            return null;
+        }
+
+        public Seccion ObtenerSeccionByNombreSeccion(string nombreSeccion)
+        {
+            foreach (var titulo in Titulos)
+            {
+                foreach (var capitulo in titulo.Capitulos)
+                {
+                    var seccion = capitulo.Secciones.FirstOrDefault(s => s.NombreSeccion == nombreSeccion);
+                    if (seccion != null)
+                        return seccion;
+                }
+            }
+            return null;
+        }
+
+        public Articulo ObtenerArticuloByNumero(int numeroArticulo)
+        {
+            foreach (var titulo in Titulos)
+            {
+                var articulo = titulo.Articulos.FirstOrDefault(a => a.NumeroArticulo == numeroArticulo);
+                if (articulo != null)
+                    return articulo;
+
+                foreach (var capitulo in titulo.Capitulos)
+                {
+                    articulo = capitulo.Articulos.FirstOrDefault(a => a.NumeroArticulo == numeroArticulo);
+                    if (articulo != null)
+                        return articulo;
+
+                    foreach (var seccion in capitulo.Secciones)
+                    {
+                        articulo = seccion.Articulos.FirstOrDefault(a => a.NumeroArticulo == numeroArticulo);
+                        if (articulo != null)
+                            return articulo;
+                    }
+                }
+            }
+            return null;
         }
     }
 
